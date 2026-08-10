@@ -511,6 +511,9 @@
       background: var(--navy);
       color: white;
       border-color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .cv-card h3,
@@ -634,6 +637,36 @@
       border-color: var(--gold);
       color: var(--gold);
       transform: translateY(-1px);
+    }
+
+    .cv-profile-block {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cv-profile-title {
+      margin: 0 0 12px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .cv-profile-block .profile-links {
+      margin-top: 0;
+    }
+
+    .cv-profile-block .profile-links a {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.26);
+      color: white;
+    }
+
+    .cv-profile-block .profile-links a:hover {
+      border-color: var(--gold);
+      color: var(--gold-soft);
     }
 
     footer {
@@ -919,13 +952,25 @@
     <section id="cv">
       <div class="final-grid">
         <div class="cv-card">
-          <h3>CV</h3>
-          <p>
-            A full overview of my research experience, methods, publications and technical skills.
-          </p>
+          <div>
+            <h3>CV</h3>
+            <p>
+              A full overview of my research experience, methods, publications and technical skills.
+            </p>
 
-          <div class="buttons">
-            <a class="button" href="Manmeet_Kaur_Sodhi_CV.pdf">Download CV</a>
+            <div class="buttons">
+              <a class="button" href="Manmeet_Kaur_Sodhi_CV.pdf">Download CV</a>
+            </div>
+          </div>
+
+          <div class="cv-profile-block">
+            <p class="cv-profile-title">Profiles</p>
+
+            <div class="profile-links">
+              <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="YOUR_RESEARCHGATE_URL" target="_blank" rel="noopener">ResearchGate</a>
+            </div>
           </div>
         </div>
 
@@ -964,12 +1009,6 @@
             Or email me directly at
             <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
           </p>
-
-          <div class="profile-links">
-            <a href="YOUR_LINKEDIN_URL" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="YOUR_GOOGLE_SCHOLAR_URL" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="YOUR_RESEARCHGATE_URL" target="_blank" rel="noopener">ResearchGate</a>
-          </div>
         </div>
       </div>
     </section>
