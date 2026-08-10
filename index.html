@@ -11,9 +11,7 @@
     content="Personal academic website of Manmeet Kaur Sodhi, PhD researcher in polymer colloids, soft matter, interfaces and particle characterization."
   />
 
-  <!-- Google Analytics placeholder
-       Replace G-XXXXXXXXXX with your real Google Analytics Measurement ID.
-       It appears twice below. -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVJF24SC3H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -24,15 +22,17 @@
 
   <style>
     :root {
-      --bg: #fffdf8;
+      --bg: #f8fafc;
       --white: #ffffff;
-      --ink: #171717;
-      --muted: #626b72;
-      --navy: #1f2a44;
-      --gold: #8a6f3d;
-      --line: #e7e0d3;
-      --soft: #f6f1e7;
-      --soft-2: #fbf5ea;
+      --ink: #111827;
+      --muted: #64748b;
+      --navy: #061b3a;
+      --navy-2: #0b2a55;
+      --blue: #1f5f8b;
+      --blue-soft: #eaf2f8;
+      --line: #dbe3ea;
+      --soft: #f1f5f9;
+      --soft-2: #eaf0f6;
       --max: 1080px;
     }
 
@@ -49,7 +49,7 @@
       background: var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      line-height: 1.65;
+      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -59,9 +59,9 @@
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(circle at 12% 12%, rgba(31, 42, 68, 0.06), transparent 30rem),
-        radial-gradient(circle at 84% 18%, rgba(138, 111, 61, 0.13), transparent 28rem),
-        linear-gradient(180deg, #fffdf8 0%, #fffaf2 46%, #f8f1e6 100%);
+        radial-gradient(circle at 15% 14%, rgba(31, 95, 139, 0.08), transparent 30rem),
+        radial-gradient(circle at 82% 15%, rgba(6, 27, 58, 0.08), transparent 26rem),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 45%, #edf3f8 100%);
     }
 
     a {
@@ -73,15 +73,15 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(255, 253, 248, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--line);
+      background: var(--navy);
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
     }
 
     .nav {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 17px 24px;
+      padding: 15px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -90,27 +90,30 @@
 
     .brand {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.18rem;
-      color: var(--navy);
+      font-size: 1.2rem;
+      color: white;
       font-weight: 700;
       letter-spacing: 0.01em;
     }
 
     .links {
       display: flex;
-      gap: 28px;
-      color: var(--navy);
-      font-size: 0.95rem;
-    }
-
-    .links a {
-      padding-bottom: 5px;
-      border-bottom: 1px solid transparent;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.94rem;
     }
 
     .links a:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
+      color: white;
+    }
+
+    .nav-button {
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 8px;
+      color: white;
+      font-weight: 700;
     }
 
     main {
@@ -121,61 +124,62 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.08fr 0.92fr;
       align-items: center;
       gap: 64px;
-      padding: 68px 0 70px;
+      padding: 60px 0 54px;
       position: relative;
     }
 
     .eyebrow {
-      margin: 0 0 18px;
-      color: var(--gold);
-      font-size: 0.8rem;
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.17em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     h1, h2, h3 {
       margin: 0;
       color: var(--navy);
-      line-height: 1.15;
+      line-height: 1.14;
     }
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.4rem, 7vw, 6.15rem);
+      font-size: clamp(3.25rem, 6.5vw, 5.65rem);
       font-weight: 500;
       letter-spacing: -0.055em;
     }
 
     .subtitle {
-      margin: 20px 0 0;
-      color: var(--gold);
-      font-size: clamp(1.25rem, 2vw, 1.58rem);
+      margin: 18px 0 0;
+      color: var(--navy-2);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
       font-weight: 500;
     }
 
     .keywords {
       margin: 12px 0 0;
       max-width: 620px;
-      color: var(--navy);
-      font-size: 1rem;
+      color: var(--blue);
+      font-size: 0.98rem;
+      font-weight: 500;
     }
 
     .intro {
-      margin: 30px 0 0;
-      max-width: 620px;
-      color: #3f4750;
-      font-size: 1.06rem;
+      margin: 26px 0 0;
+      max-width: 600px;
+      color: #334155;
+      font-size: 1.04rem;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 31px;
+      margin-top: 30px;
     }
 
     .button {
@@ -186,9 +190,9 @@
       border-radius: 8px;
       font-weight: 700;
       font-size: 0.94rem;
-      border: 1px solid var(--gold);
-      background: rgba(255, 253, 248, 0.75);
-      color: var(--gold);
+      border: 1px solid var(--navy-2);
+      background: white;
+      color: var(--navy-2);
       transition: 0.2s ease;
     }
 
@@ -200,12 +204,7 @@
 
     .button:hover {
       transform: translateY(-1px);
-      background: var(--soft);
-    }
-
-    .button.dark:hover {
-      background: #17243d;
-      color: white;
+      box-shadow: 0 10px 22px rgba(6, 27, 58, 0.10);
     }
 
     .photo-wrap {
@@ -214,37 +213,27 @@
       position: relative;
     }
 
-    .photo-wrap::before {
-      content: "";
-      position: absolute;
-      inset: auto;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(138, 111, 61, 0.12), transparent 65%);
-      z-index: -2;
-    }
-
     .photo-wrap::after {
       content: "";
       position: absolute;
-      right: -60px;
-      top: 34px;
-      width: 245px;
-      height: 245px;
+      right: -44px;
+      top: 32px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
-      border: 1px dotted rgba(138, 111, 61, 0.38);
+      background-image: radial-gradient(rgba(31, 95, 139, 0.28) 1.2px, transparent 1.2px);
+      background-size: 13px 13px;
       z-index: -1;
     }
 
     .photo {
-      width: min(335px, 80vw);
+      width: min(330px, 80vw);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
-      padding: 10px;
+      padding: 9px;
       background: white;
-      border: 1px solid rgba(138, 111, 61, 0.48);
-      box-shadow: 0 22px 48px rgba(31, 42, 68, 0.13);
+      border: 1px solid var(--line);
+      box-shadow: 0 24px 52px rgba(6, 27, 58, 0.16);
     }
 
     .photo img {
@@ -257,66 +246,62 @@
     }
 
     section {
-      padding: 62px 0;
+      padding: 54px 0;
       border-top: 1px solid var(--line);
     }
 
+    .kicker {
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.85rem, 3.6vw, 2.55rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
     .section-head {
-      margin-bottom: 34px;
+      margin-bottom: 28px;
     }
 
     .section-head.center {
       text-align: center;
     }
 
-    .kicker {
-      color: var(--gold);
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-    }
-
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 2.85rem);
-      font-weight: 500;
-      letter-spacing: -0.035em;
-    }
-
     .small-text {
-      margin: 13px 0 0;
+      margin: 12px 0 0;
       color: var(--muted);
-      font-size: 1.01rem;
+      font-size: 1rem;
     }
 
     .about {
-      padding: 50px 0 58px;
+      display: grid;
+      grid-template-columns: 0.22fr 1fr;
+      gap: 48px;
+      align-items: start;
+      padding: 36px 0 42px;
     }
 
-    .about-inner {
-      max-width: 790px;
+    .about p {
+      margin: 0;
+      max-width: 760px;
+      color: #334155;
+      font-size: 1rem;
     }
 
-    .about-lead {
-      margin: 0 0 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.45rem, 3vw, 2.05rem);
-      line-height: 1.35;
+    .about strong {
       color: var(--navy);
     }
 
-    .about-text {
-      margin: 0;
-      color: #3f4750;
-      font-size: 1.04rem;
-      max-width: 720px;
-    }
-
     .band {
-      background: linear-gradient(180deg, var(--soft-2), var(--soft));
-      box-shadow: 0 0 0 100vmax var(--soft-2);
+      background: linear-gradient(180deg, #eef4f8, #eaf0f6);
+      box-shadow: 0 0 0 100vmax #eef4f8;
       clip-path: inset(0 -100vmax);
     }
 
@@ -329,33 +314,46 @@
     .research-card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 28px;
-      min-height: 200px;
-      box-shadow: 0 12px 28px rgba(31, 42, 68, 0.07);
+      border-radius: 14px;
+      padding: 24px;
+      min-height: 185px;
+      box-shadow: 0 12px 28px rgba(6, 27, 58, 0.08);
+    }
+
+    .research-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 16px;
+      font-size: 0.85rem;
     }
 
     .research-card span {
       display: block;
-      color: var(--gold);
-      font-size: 0.77rem;
+      color: var(--blue);
+      font-size: 0.78rem;
       font-weight: 800;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
     }
 
     .research-card h3 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.42rem;
-      font-weight: 500;
-      margin-bottom: 18px;
+      font-size: 1.28rem;
+      font-weight: 600;
+      margin-bottom: 12px;
     }
 
     .research-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     .publication-list {
@@ -368,27 +366,27 @@
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items: start;
-      padding: 20px 0;
+      padding: 19px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .publication h3 {
       color: var(--ink);
-      font-size: 1.01rem;
+      font-size: 1rem;
       font-weight: 650;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .publication p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.93rem;
     }
 
     .year {
-      color: var(--gold);
+      color: var(--blue);
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       white-space: nowrap;
     }
 
@@ -399,20 +397,20 @@
 
     .experience {
       display: grid;
-      grid-template-columns: 0.28fr 1fr;
-      gap: 40px;
-      padding: 21px 0;
+      grid-template-columns: 0.25fr 1fr;
+      gap: 38px;
+      padding: 20px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .date {
-      color: var(--gold);
+      color: var(--blue);
       font-weight: 750;
-      font-size: 0.94rem;
+      font-size: 0.93rem;
     }
 
     .experience h3 {
-      font-size: 1.04rem;
+      font-size: 1.03rem;
       color: var(--ink);
       margin-bottom: 5px;
     }
@@ -420,22 +418,23 @@
     .experience p {
       margin: 0;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
     .final-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
+      grid-template-columns: 0.85fr 1.15fr;
       gap: 24px;
       align-items: stretch;
     }
 
     .cv-card,
     .ask-card {
-      border-radius: 18px;
-      padding: 32px;
-      min-height: 250px;
-      box-shadow: 0 12px 28px rgba(31, 42, 68, 0.07);
+      border-radius: 16px;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(6, 27, 58, 0.08);
     }
 
     .cv-card {
@@ -443,17 +442,12 @@
       color: white;
     }
 
-    .ask-card {
-      background: white;
-      border: 1px solid var(--line);
-    }
-
     .cv-card h3,
     .ask-card h3 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 500;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .cv-card h3 {
@@ -474,24 +468,78 @@
       color: var(--muted);
     }
 
-    .contact-links {
+    .question-form {
       display: grid;
-      gap: 11px;
-      margin-top: 24px;
+      gap: 13px;
+      margin-top: 20px;
     }
 
-    .contact-links a {
-      color: var(--gold);
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .question-form label {
+      display: grid;
+      gap: 6px;
+      color: var(--navy);
+      font-size: 0.88rem;
       font-weight: 700;
-      word-break: break-word;
+    }
+
+    .question-form input,
+    .question-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 11px;
+      background: #f8fafc;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .question-form input:focus,
+    .question-form textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(31, 95, 139, 0.12);
+    }
+
+    .question-form button {
+      justify-self: start;
+      margin-top: 2px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .question-form button:hover {
+      background: var(--navy-2);
+    }
+
+    .form-note {
+      margin-top: 16px !important;
+      font-size: 0.9rem;
+    }
+
+    .form-note a {
+      color: var(--blue);
+      font-weight: 700;
     }
 
     footer {
-      border-top: 1px solid var(--line);
+      background: var(--navy);
+      color: rgba(255,255,255,0.82);
       text-align: center;
-      padding: 34px 24px 42px;
-      color: var(--muted);
-      font-size: 0.9rem;
+      padding: 24px;
+      font-size: 0.88rem;
+      margin-top: 34px;
     }
 
     @media (max-width: 880px) {
@@ -501,8 +549,8 @@
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 42px;
-        padding: 56px 0 62px;
+        gap: 38px;
+        padding: 52px 0 56px;
       }
 
       .photo-wrap {
@@ -513,9 +561,15 @@
         display: none;
       }
 
+      .about,
       .research-grid,
-      .final-grid {
+      .final-grid,
+      .form-row {
         grid-template-columns: 1fr;
+      }
+
+      .about {
+        gap: 12px;
       }
 
       .experience {
@@ -530,7 +584,7 @@
       }
 
       .nav {
-        padding: 15px 18px;
+        padding: 14px 18px;
       }
 
       h1 {
@@ -538,17 +592,13 @@
       }
 
       section {
-        padding: 50px 0;
-      }
-
-      .about {
-        padding: 46px 0 52px;
+        padding: 48px 0;
       }
 
       .research-card,
       .cv-card,
       .ask-card {
-        padding: 24px;
+        padding: 23px;
       }
 
       .publication {
@@ -570,7 +620,7 @@
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
         <a href="#cv">CV</a>
-        <a href="#ask">Ask</a>
+        <a href="#ask" class="nav-button">Ask me a question</a>
       </div>
     </nav>
   </header>
@@ -589,14 +639,14 @@
         </p>
 
         <p class="intro">
-          I study soft polymer-colloid systems at interfaces. My work links
-          particle mechanics to foam structure and material performance.
+          I work on soft polymer-colloid systems at interfaces, connecting
+          particle-scale properties with foam structure and material performance.
         </p>
 
         <div class="buttons">
           <a class="button dark" href="#research">Research</a>
           <a class="button" href="#publications">Publications</a>
-          <a class="button" href="#ask">Ask me a question</a>
+          <a class="button" href="#ask">Contact</a>
         </div>
       </div>
 
@@ -608,24 +658,21 @@
     </section>
 
     <section id="about" class="about">
-      <div class="about-inner">
+      <div>
         <p class="kicker">About</p>
+      </div>
 
-        <p class="about-lead">
-          I am a PhD researcher at the Technical University of Darmstadt and the
-          Institut Laue-Langevin in Grenoble.
-        </p>
-
-        <p class="about-text">
-          My work focuses on polymer colloids, soft interfaces and advanced
-          characterization methods, with an interest in how particle-scale
-          properties shape material performance.
+      <div>
+        <p>
+          I am a <strong>PhD researcher</strong> at the Technical University of Darmstadt
+          and the Institut Laue-Langevin in Grenoble. My work focuses on polymer
+          colloids, soft interfaces and advanced characterization methods.
         </p>
       </div>
     </section>
 
     <section id="research" class="band">
-      <div class="section-head center">
+      <div class="section-head">
         <p class="kicker">Research</p>
         <h2>Selected research projects.</h2>
         <p class="small-text">Further details are available in my CV.</p>
@@ -633,18 +680,21 @@
 
       <div class="research-grid">
         <article class="research-card">
+          <div class="research-icon">01</div>
           <span>PhD Research</span>
           <h3>Microgel-stabilized aqueous foams</h3>
           <p>TU Darmstadt · Institut Laue-Langevin</p>
         </article>
 
         <article class="research-card">
+          <div class="research-icon">02</div>
           <span>Master’s Research</span>
           <h3>Graphene and hBN growth on copper surfaces</h3>
           <p>ESRF · CEA Grenoble</p>
         </article>
 
         <article class="research-card">
+          <div class="research-icon">03</div>
           <span>Research Internship</span>
           <h3>Nanowire device fabrication and encapsulation</h3>
           <p>CNRS Institut Néel · Grenoble</p>
@@ -731,7 +781,7 @@
         <div class="cv-card">
           <h3>CV</h3>
           <p>
-            Detailed research experience, methods, publications and technical skills.
+            A full overview of my research experience, methods, publications and technical skills.
           </p>
 
           <div class="buttons">
@@ -741,18 +791,37 @@
 
         <div class="ask-card" id="ask">
           <h3>Ask me a question</h3>
+
           <p>
-            Questions about my research, methods, publications or possible
-            collaborations are welcome.
+            Have a question about my research, methods or publications?
+            You can send me a short message here.
           </p>
 
-          <div class="contact-links">
-            <a href="mailto:21.manmeet@gmail.com?subject=Question%20about%20your%20research">
-              Send a question by email
-            </a>
-            <a href="https://github.com/nishusodhi" target="_blank" rel="noopener">GitHub</a>
-            <span>Grenoble, France</span>
-          </div>
+          <form class="question-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required>
+              </label>
+
+              <label>
+                Email
+                <input type="email" name="email" placeholder="Your email" required>
+              </label>
+            </div>
+
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </label>
+
+            <button type="submit">Send message</button>
+          </form>
+
+          <p class="form-note">
+            Or email me directly at
+            <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
+          </p>
         </div>
       </div>
     </section>
