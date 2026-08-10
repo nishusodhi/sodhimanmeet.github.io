@@ -6,28 +6,26 @@
 
   <title>Manmeet Kaur Sodhi | Polymer & Colloid Scientist</title>
 
-  <meta name="description" content="Manmeet Kaur Sodhi — Polymer and colloid scientist working on soft matter, particle characterization, AFM, DLS, scattering, neutron reflectometry, interfaces and scientific instrumentation." />
+  <meta
+    name="description"
+    content="Personal academic website of Manmeet Kaur Sodhi, PhD researcher in polymer colloids, soft matter, interfaces and particle characterization."
+  />
 
   <style>
     :root {
-      --navy: #08264a;
-      --navy-dark: #041a34;
-      --teal: #0f8f8c;
-      --teal-light: #e8f6f5;
-      --ink: #172033;
-      --muted: #5f6b7a;
-      --line: #dfe8ee;
-      --paper: #fbfcfd;
+      --bg: #fbfaf7;
       --white: #ffffff;
-      --soft: #f4f8fa;
-      --shadow: 0 18px 45px rgba(8, 38, 74, 0.10);
-      --radius: 18px;
+      --ink: #13202a;
+      --muted: #687782;
+      --navy: #0b2545;
+      --teal: #238b86;
+      --line: #e3e7e8;
+      --soft: #eef6f5;
+      --max: 1040px;
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     html {
@@ -35,9 +33,10 @@
     }
 
     body {
-      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--paper);
+      margin: 0;
+      background: var(--bg);
       color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.65;
     }
 
@@ -46,828 +45,684 @@
       text-decoration: none;
     }
 
-    /* ================= NAVIGATION ================= */
-
-    .topbar {
-      background: var(--navy);
-      color: white;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+    .header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 20;
+      background: rgba(251, 250, 247, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      max-width: 1180px;
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 16px 28px;
+      padding: 18px 24px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 28px;
+      align-items: center;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 13px;
-      font-size: 0.95rem;
+      gap: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      color: var(--navy);
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .links {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .links a:hover {
+      color: var(--teal);
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      min-height: calc(100vh - 73px);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 72px;
+      padding: 72px 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .seal {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      border: 1.5px solid rgba(255,255,255,0.75);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: Georgia, serif;
-      font-size: 1.15rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      color: rgba(255,255,255,0.88);
-      font-size: 0.96rem;
-      font-weight: 600;
-    }
-
-    .nav-links a {
-      position: relative;
-      padding: 6px 0;
-    }
-
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--teal);
-      transition: width 0.18s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      background:
-        radial-gradient(circle at 14% 24%, rgba(15,143,140,0.08), transparent 25%),
-        radial-gradient(circle at 70% 40%, rgba(15,143,140,0.10), transparent 24%),
-        linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 64px 28px 58px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 55px;
-      align-items: center;
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--navy);
+      line-height: 1.15;
     }
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.9rem, 6vw, 5.2rem);
-      line-height: 1.02;
+      font-size: clamp(3.2rem, 7vw, 6.2rem);
       font-weight: 500;
-      color: var(--navy-dark);
-      letter-spacing: -0.045em;
-      margin-bottom: 10px;
+      letter-spacing: -0.055em;
     }
 
-    .role {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.55rem, 2.8vw, 2.05rem);
+    .subtitle {
+      margin: 22px 0 0;
       color: var(--teal);
-      font-weight: 700;
-      margin-bottom: 8px;
+      font-size: clamp(1.25rem, 2vw, 1.65rem);
+      font-weight: 600;
     }
 
     .keywords {
-      color: var(--ink);
-      font-weight: 600;
-      margin-bottom: 22px;
-      letter-spacing: 0.01em;
-    }
-
-    .keywords span {
-      margin: 0 12px;
+      margin: 12px 0 0;
       color: var(--muted);
+      font-size: 1.02rem;
     }
 
     .intro {
-      max-width: 690px;
-      font-size: 1.03rem;
-      color: #3a4656;
-      margin-bottom: 28px;
+      margin: 30px 0 0;
+      max-width: 640px;
+      color: #35464f;
+      font-size: 1.08rem;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-top: 32px;
     }
 
-    .btn {
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 12px 22px;
-      border-radius: 8px;
+      padding: 11px 20px;
+      border-radius: 999px;
       font-weight: 700;
-      font-size: 0.95rem;
-      border: 1px solid transparent;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      font-size: 0.94rem;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--navy);
+      transition: 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 26px rgba(8,38,74,0.10);
-    }
-
-    .btn-primary {
+    .button.dark {
       background: var(--navy);
       color: white;
+      border-color: var(--navy);
     }
 
-    .btn-outline {
-      background: white;
-      color: var(--teal);
+    .button:hover {
+      transform: translateY(-1px);
       border-color: var(--teal);
+      color: var(--teal);
     }
 
-    .portrait-wrap {
+    .button.dark:hover {
+      background: #12345f;
+      color: white;
+      border-color: #12345f;
+    }
+
+    .photo-wrap {
       display: flex;
       justify-content: center;
-      position: relative;
     }
 
-    .portrait-card {
-      position: relative;
-      width: min(360px, 90vw);
-      height: min(360px, 90vw);
+    .photo {
+      width: min(350px, 82vw);
+      aspect-ratio: 1 / 1;
       border-radius: 50%;
-      background:
-        radial-gradient(circle at 30% 28%, #ffffff 0%, #edf7f7 38%, #dcecef 100%);
-      border: 1px solid #c9dfe3;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .portrait-card::after {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border-radius: 50%;
-      border: 2px solid rgba(15,143,140,0.32);
-      border-left-color: transparent;
-      border-bottom-color: transparent;
-      transform: rotate(-15deg);
-    }
-
-    .portrait-initials {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 4.2rem;
-      color: var(--navy);
-      letter-spacing: -0.08em;
-      z-index: 2;
-    }
-
-    .floating-note {
-      position: absolute;
-      left: -20px;
-      top: 78px;
+      padding: 10px;
       background: white;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      padding: 16px 17px;
-      width: 190px;
-      z-index: 3;
+      box-shadow: 0 24px 55px rgba(16, 33, 43, 0.10);
+      position: relative;
     }
 
-    .floating-note div {
-      display: grid;
-      grid-template-columns: 26px 1fr;
-      gap: 9px;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 0.85rem;
-      color: var(--ink);
-      line-height: 1.35;
-      font-weight: 600;
+    .photo::before {
+      content: "";
+      position: absolute;
+      inset: -16px;
+      border-radius: 50%;
+      border: 1px solid rgba(35, 139, 134, 0.28);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-18deg);
+      pointer-events: none;
     }
 
-    .floating-note div:last-child {
-      margin-bottom: 0;
-    }
-
-    .icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 7px;
-      background: var(--teal-light);
-      color: var(--teal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-    }
-
-    /* ================= MAIN ================= */
-
-    main {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 34px 28px 70px;
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      display: block;
     }
 
     section {
-      scroll-margin-top: 86px;
+      padding: 68px 0;
+      border-top: 1px solid var(--line);
     }
 
-    .section-row {
+    .section-head {
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 24px;
-      margin: 20px 0 28px;
-      align-items: start;
+      grid-template-columns: 0.28fr 1fr;
+      gap: 48px;
+      margin-bottom: 34px;
     }
 
-    .section-label {
-      color: var(--navy);
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      line-height: 1.4;
-      font-size: 0.98rem;
-      padding-top: 12px;
-    }
-
-    .section-label::after {
-      content: "";
-      display: block;
-      width: 42px;
-      height: 2px;
-      background: var(--teal);
-      margin-top: 12px;
-    }
-
-    .cards-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 28px rgba(8,38,74,0.055);
-      padding: 22px;
-      min-height: 150px;
-    }
-
-    .card-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--teal-light);
+    .kicker {
       color: var(--teal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      margin-bottom: 13px;
-    }
-
-    .card h3 {
-      color: var(--navy);
-      font-size: 1.02rem;
-      margin-bottom: 7px;
-      line-height: 1.35;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .panel {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 28px rgba(8,38,74,0.055);
-      padding: 28px;
-    }
-
-    .panel h2 {
-      color: var(--navy);
-      font-size: 1.15rem;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-bottom: 14px;
+      margin-top: 8px;
     }
 
-    .project-title {
+    h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.8rem;
-      line-height: 1.16;
-      color: var(--navy-dark);
-      margin-bottom: 12px;
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
     }
 
-    .panel p {
+    .small-text {
+      margin: 16px 0 0;
+      max-width: 700px;
       color: var(--muted);
-      margin-bottom: 12px;
+      font-size: 1.03rem;
     }
 
-    .list {
-      margin-top: 12px;
-      padding-left: 18px;
-      color: var(--muted);
+    .about-text {
+      max-width: 780px;
+      color: #35464f;
+      font-size: 1.06rem;
     }
 
-    .list li {
-      margin-bottom: 8px;
+    .about-text p {
+      margin: 0 0 18px;
     }
 
-    .timeline {
+    .research-grid {
       display: grid;
-      gap: 13px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .timeline-item {
-      border-left: 3px solid var(--teal);
-      padding-left: 16px;
-      margin-bottom: 14px;
+    .research-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      min-height: 210px;
     }
 
-    .timeline-item h3 {
-      color: var(--navy);
-      font-size: 1rem;
-      margin-bottom: 2px;
+    .research-card span {
+      display: block;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
-    .timeline-item .meta {
+    .research-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .research-card p {
+      margin: 0;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.96rem;
+    }
+
+    .note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
     }
 
     .publication {
       display: grid;
-      grid-template-columns: 45px 1fr 70px;
-      gap: 14px;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
       align-items: start;
-      padding: 16px 0;
+      padding: 22px 0;
       border-bottom: 1px solid var(--line);
-    }
-
-    .publication:last-child {
-      border-bottom: none;
-    }
-
-    .pub-no {
-      color: var(--teal);
-      font-weight: 800;
     }
 
     .publication h3 {
       color: var(--ink);
-      font-size: 1rem;
-      margin-bottom: 4px;
+      font-size: 1.02rem;
+      font-weight: 650;
+      margin-bottom: 6px;
     }
 
     .publication p {
-      margin-bottom: 0;
-      font-size: 0.92rem;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
     }
 
-    .pub-link {
+    .year {
       color: var(--teal);
-      font-weight: 700;
-      font-size: 0.9rem;
-      text-align: right;
+      font-weight: 800;
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 0.28fr 1fr;
+      gap: 40px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .date {
+      color: var(--teal);
+      font-weight: 750;
+      font-size: 0.94rem;
+    }
+
+    .experience h3 {
+      font-size: 1.04rem;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .experience p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .cv-card,
+    .contact-card {
+      border-radius: 24px;
+      padding: 30px;
+      min-height: 240px;
     }
 
     .cv-card {
-      background: linear-gradient(135deg, #f1fbfb, #ffffff);
-      border: 1px solid #cbe7e8;
+      background: var(--navy);
+      color: white;
     }
 
-    .cv-button {
-      margin-top: 15px;
-      width: fit-content;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .contact-item {
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 12px;
+    .cv-card h3,
+    .contact-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      font-weight: 500;
       margin-bottom: 14px;
+    }
+
+    .cv-card h3 {
+      color: white;
+    }
+
+    .cv-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .contact-card {
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .contact-card p {
+      margin: 0;
       color: var(--muted);
     }
 
-    .contact-item strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 1px;
+    .contact-links {
+      display: grid;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .contact-links a {
+      color: var(--teal);
+      font-weight: 700;
+      word-break: break-word;
     }
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 26px 28px;
       text-align: center;
+      padding: 34px 24px 42px;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 980px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
+    @media (max-width: 880px) {
+      .links {
+        display: none;
       }
 
-      .portrait-wrap {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        padding: 58px 0 64px;
+      }
+
+      .photo-wrap {
         justify-content: flex-start;
       }
 
-      .floating-note {
-        left: 260px;
-        top: 50px;
+      .section-head,
+      .experience,
+      .contact-box {
+        grid-template-columns: 1fr;
+        gap: 18px;
       }
 
-      .cards-4,
-      .grid-2,
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .section-row {
+      .research-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 560px) {
+      main {
+        padding: 0 18px;
+      }
+
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 15px 18px;
       }
 
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 16px;
+      .brand span:last-child {
+        display: none;
       }
 
-      .hero-inner {
-        padding-top: 44px;
+      h1 {
+        font-size: 3rem;
       }
 
-      .buttons {
-        flex-direction: column;
+      section {
+        padding: 52px 0;
       }
 
-      .btn {
-        width: 100%;
-      }
-
-      .portrait-card {
-        width: 260px;
-        height: 260px;
-      }
-
-      .floating-note {
-        position: static;
-        margin-top: 18px;
-      }
-
-      .cards-4,
-      .grid-2,
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .research-card,
+      .cv-card,
+      .contact-card {
+        padding: 24px;
       }
 
       .publication {
-        grid-template-columns: 36px 1fr;
-      }
-
-      .pub-link {
-        grid-column: 2;
-        text-align: left;
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <header class="topbar">
+  <header class="header">
     <nav class="nav">
-      <a class="brand" href="#home">
-        <span class="seal">M</span>
+      <a href="#home" class="brand">
+        <span class="brand-mark">MKS</span>
         <span>Manmeet Kaur Sodhi</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
+      <div class="links">
+        <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
         <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-inner">
-
+  <main>
+    <section class="hero" id="home">
       <div>
+        <p class="eyebrow">Soft Matter · Interfaces · Characterization</p>
+
         <h1>Manmeet Kaur Sodhi</h1>
 
-        <div class="role">Polymer &amp; Colloid Scientist</div>
+        <p class="subtitle">Polymer & Colloid Scientist</p>
 
-        <div class="keywords">
-          Soft Matter <span>|</span> Particle Characterization <span>|</span> Scientific Instrumentation
-        </div>
+        <p class="keywords">
+          AFM · DLS · SANS/SAXS · Neutron Reflectometry · Particle Characterization
+        </p>
 
         <p class="intro">
-          I investigate polymer-colloid systems and soft interfaces using advanced
-          characterization tools including AFM, DLS, scattering techniques and microscopy.
-          My work connects particle-scale mechanics and structure to macroscopic material
-          performance, with applications in foams, coatings and functional soft materials.
+          I study soft polymer-colloid systems at interfaces. My work links
+          particle mechanics to foam structure and material performance.
         </p>
 
         <div class="buttons">
-          <a class="btn btn-primary" href="#cv">Download CV</a>
-          <a class="btn btn-outline" href="#contact">Contact</a>
+          <a class="button dark" href="#research">Research</a>
+          <a class="button" href="#publications">Publications</a>
+          <a class="button" href="#contact">Contact</a>
         </div>
       </div>
 
-      <div class="portrait-wrap">
-        <div class="floating-note">
-          <div><span class="icon">S</span><span>Soft Matter<br>&amp; Interfaces</span></div>
-          <div><span class="icon">A</span><span>AFM, DLS<br>&amp; Scattering</span></div>
-          <div><span class="icon">M</span><span>Mechanics to<br>Performance</span></div>
-        </div>
-
-        <div class="portrait-card">
-          <div class="portrait-initials">MKS</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <main>
-
-    <section class="section-row" id="research">
-      <div class="section-label">Research<br>Focus</div>
-
-      <div>
-        <div class="cards-4">
-          <article class="card">
-            <div class="card-icon">01</div>
-            <h3>Microgel-Stabilized Foams</h3>
-            <p>
-              Structure, stability and drainage of particle-stabilized aqueous foams.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">02</div>
-            <h3>AFM Force Spectroscopy</h3>
-            <p>
-              Mechanical response, deformation and force mapping of soft polymer particles.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">03</div>
-            <h3>SANS / SAXS &amp; Reflectometry</h3>
-            <p>
-              Mesoscale structure and interfacial organization in complex soft-matter systems.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">04</div>
-            <h3>Polymer Colloids &amp; Interfaces</h3>
-            <p>
-              Colloid-polymer interactions, confinement and structure-property relationships.
-            </p>
-          </article>
-        </div>
-
-        <div class="grid-2">
-
-          <article class="panel">
-            <h2>PhD Project</h2>
-            <div class="project-title">Microgel-stabilized aqueous foams</div>
-            <p>
-              My doctoral research examines how PNIPAM microgel composition, charge and
-              crosslinking control particle mechanics, interfacial organization and foam structure.
-            </p>
-            <ul class="list">
-              <li>AFM force spectroscopy and nanomechanical mapping of soft polymer particles.</li>
-              <li>DLS, zeta potential and microscopy for particle and dispersion characterization.</li>
-              <li>SANS/SAXS and neutron reflectometry for foam films and confined structures.</li>
-              <li>Structure-property relationships across particle, interface and foam length scales.</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <h2>Master Thesis</h2>
-            <div class="project-title">Graphene and hBN growth on copper</div>
-            <p>
-              At ESRF and CEA, I investigated graphene and hexagonal boron nitride growth
-              on liquid and single-crystal copper using operando imaging and synchrotron
-              X-ray techniques.
-            </p>
-            <ul class="list">
-              <li>Synchrotron XRD and XRR for interfacial structure and thin-film growth.</li>
-              <li>Python-based video analysis of graphene-flake motion and self-organization.</li>
-              <li>Collaboration with beamline scientists on measurement strategy and interpretation.</li>
-            </ul>
-          </article>
-
+      <div class="photo-wrap">
+        <div class="photo">
+          <img src="manmeet.jpg" alt="Manmeet Kaur Sodhi" />
         </div>
       </div>
     </section>
 
-    <section class="grid-2" id="experience">
-
-      <article class="panel">
-        <h2>Experience</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Doctoral Researcher — TU Darmstadt &amp; Institut Laue-Langevin</h3>
-            <div class="meta">Nov 2023 — Present | Darmstadt / Grenoble</div>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Master's Research Thesis — ESRF &amp; CEA</h3>
-            <div class="meta">Feb 2023 — Aug 2023 | Grenoble</div>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Graduate Research Intern — CNRS Institut Néel</h3>
-            <div class="meta">Feb 2022 — Jun 2022 | Grenoble</div>
-          </div>
+    <section id="about">
+      <div class="section-head">
+        <div class="kicker">About</div>
+        <div>
+          <h2>Experimental soft-matter researcher working across particles, interfaces and structure.</h2>
         </div>
-      </article>
+      </div>
 
-      <article class="panel">
-        <h2>Education</h2>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>PhD Researcher, Soft Matter at Interfaces</h3>
-            <div class="meta">Technical University of Darmstadt | 2023 — Present</div>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Master 2, Nanophysics</h3>
-            <div class="meta">Université Grenoble Alpes | 2022 — 2023</div>
-          </div>
-
-          <div class="timeline-item">
-            <h3>Bachelor of Science, Physics</h3>
-            <div class="meta">Guru Nanak Dev University | 2015 — 2018</div>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <section class="grid-2" id="publications">
-
-      <article class="panel">
-        <h2>Selected Publications</h2>
-
-        <div class="publication">
-          <div class="pub-no">01</div>
-          <div>
-            <h3>Multiscale Structure of Microgel-Containing Foams</h3>
-            <p>Manuscript in preparation.</p>
-          </div>
-          <a class="pub-link" href="#">Soon</a>
-        </div>
-
-        <div class="publication">
-          <div class="pub-no">02</div>
-          <div>
-            <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper</h3>
-            <p>Advanced Science, 2026.</p>
-          </div>
-          <a class="pub-link" href="#">View</a>
-        </div>
-
-        <div class="publication">
-          <div class="pub-no">03</div>
-          <div>
-            <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
-            <p>Journal of Chemical Physics, 163, 174906, 2025.</p>
-          </div>
-          <a class="pub-link" href="#">View</a>
-        </div>
-      </article>
-
-      <article class="panel cv-card" id="cv">
-        <h2>Curriculum Vitae</h2>
-        <div class="project-title">Industrial R&amp;D and application science profile</div>
+      <div class="about-text">
         <p>
-          My CV summarizes my background in polymer colloids, particle characterization,
-          scientific instrumentation, large-scale facility experiments and data analysis.
+          I am a PhD researcher at the Technical University of Darmstadt and the
+          Institut Laue-Langevin in Grenoble.
         </p>
 
-        <a class="btn btn-primary cv-button" href="#contact">CV will be added soon</a>
-      </article>
-
+        <p>
+          My research combines polymer colloids, interfacial science and advanced
+          characterization methods to understand soft materials across length scales.
+        </p>
+      </div>
     </section>
 
-    <section class="panel" id="contact">
-      <h2>Contact</h2>
-
-      <div class="contact-grid">
+    <section id="research">
+      <div class="section-head">
+        <div class="kicker">Research</div>
         <div>
-          <div class="contact-item">
-            <span class="icon">E</span>
-            <div>
-              <strong>Email</strong>
-              <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
-            </div>
-          </div>
+          <h2>Selected research projects.</h2>
+          <p class="small-text">
+            Further details are available in my CV.
+          </p>
+        </div>
+      </div>
 
-          <div class="contact-item">
-            <span class="icon">L</span>
-            <div>
-              <strong>Location</strong>
-              Grenoble, France
-            </div>
+      <div class="research-grid">
+        <article class="research-card">
+          <span>PhD Research</span>
+          <h3>Microgel-stabilized aqueous foams</h3>
+          <p>TU Darmstadt · Institut Laue-Langevin</p>
+        </article>
+
+        <article class="research-card">
+          <span>Master’s Research</span>
+          <h3>Graphene and hBN growth on copper surfaces</h3>
+          <p>ESRF · CEA Grenoble</p>
+        </article>
+
+        <article class="research-card">
+          <span>Research Internship</span>
+          <h3>Nanowire device fabrication and encapsulation</h3>
+          <p>CNRS Institut Néel · Grenoble</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <div class="kicker">Publications</div>
+        <div>
+          <h2>Selected publications.</h2>
+        </div>
+      </div>
+
+      <div class="publication-list">
+        <article class="publication">
+          <div>
+            <h3>Multiscale Structure of Microgel-Containing Foams: From Particle Mechanics to Confined Films</h3>
+            <p>Manmeet Kaur Sodhi et al. · Manuscript in preparation</p>
+          </div>
+          <div class="year">In prep.</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper Surfaces</h3>
+            <p>Advanced Science</p>
+          </div>
+          <div class="year">2026</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
+            <p>Journal of Chemical Physics · 163, 174906</p>
+          </div>
+          <div class="year">2025</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>AlN Nanowire-Based Vertically Integrated Piezoelectric Nanogenerators</h3>
+            <p>ACS Applied Nano Materials · 7</p>
+          </div>
+          <div class="year">2024</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div class="kicker">Experience</div>
+        <div>
+          <h2>Research experience.</h2>
+        </div>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience">
+          <div class="date">2023 — Present</div>
+          <div>
+            <h3>Doctoral Researcher · TU Darmstadt & Institut Laue-Langevin</h3>
+            <p>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</p>
           </div>
         </div>
 
-        <div>
-          <div class="contact-item">
-            <span class="icon">in</span>
-            <div>
-              <strong>LinkedIn</strong>
-              <a href="https://www.linkedin.com/in/manmeet-kaur-sodhi-a94039223/">linkedin.com/in/manmeet-kaur-sodhi-a94039223</a>
-            </div>
+        <div class="experience">
+          <div class="date">2023</div>
+          <div>
+            <h3>Master’s Research · ESRF & CEA Grenoble</h3>
+            <p>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</p>
           </div>
+        </div>
 
-          <div class="contact-item">
-            <span class="icon">G</span>
-            <div>
-              <strong>GitHub</strong>
-              <a href="https://github.com/nishusodhi">github.com/nishusodhi</a>
-            </div>
+        <div class="experience">
+          <div class="date">2022</div>
+          <div>
+            <h3>Research Internship · CNRS Institut Néel</h3>
+            <p>Nanowire device fabrication, encapsulation and microscopy-based characterization.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="cv">
+      <div class="contact-box">
+        <div class="cv-card">
+          <h3>CV</h3>
+          <p>
+            Detailed research experience, methods, publications and technical skills.
+          </p>
+
+          <div class="buttons">
+            <a class="button" href="Manmeet_Kaur_Sodhi_CV.pdf">Download CV</a>
+          </div>
+        </div>
+
+        <div class="contact-card" id="contact">
+          <h3>Contact</h3>
+          <p>
+            Open to research, application science and scientific instrumentation roles.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
+            <a href="https://github.com/nishusodhi" target="_blank" rel="noopener">GitHub</a>
+            <span>Grenoble, France</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2026 Manmeet Kaur Sodhi · Polymer &amp; Colloid Scientist
+    © 2026 Manmeet Kaur Sodhi
   </footer>
-
 </body>
 </html>
