@@ -63,9 +63,9 @@
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(circle at 13% 12%, rgba(194, 154, 74, 0.12), transparent 28rem),
-        radial-gradient(circle at 84% 16%, rgba(6, 26, 51, 0.08), transparent 26rem),
-        linear-gradient(180deg, #f7f5f0 0%, #ffffff 44%, #efeee9 100%);
+        radial-gradient(circle at 12% 11%, rgba(194, 154, 74, 0.13), transparent 27rem),
+        radial-gradient(circle at 84% 15%, rgba(6, 26, 51, 0.08), transparent 26rem),
+        linear-gradient(180deg, #f7f5f0 0%, #ffffff 45%, #efeee9 100%);
     }
 
     a {
@@ -103,7 +103,7 @@
     .links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 25px;
       color: var(--navy);
       font-size: 0.94rem;
     }
@@ -139,10 +139,10 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.06fr 0.94fr;
+      grid-template-columns: 1.04fr 0.96fr;
       align-items: center;
-      gap: 68px;
-      padding: 68px 0 62px;
+      gap: 70px;
+      padding: 66px 0 58px;
       position: relative;
     }
 
@@ -163,14 +163,14 @@
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.35rem, 6.7vw, 5.9rem);
+      font-size: clamp(3.35rem, 6.7vw, 5.85rem);
       font-weight: 500;
       letter-spacing: -0.055em;
     }
 
     h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.9rem, 3.8vw, 2.65rem);
+      font-size: clamp(1.9rem, 3.8vw, 2.62rem);
       font-weight: 500;
       letter-spacing: -0.035em;
     }
@@ -213,7 +213,7 @@
       font-weight: 700;
       font-size: 0.94rem;
       border: 1px solid var(--gold);
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.76);
       color: var(--navy);
       transition: 0.2s ease;
     }
@@ -239,13 +239,23 @@
       position: relative;
     }
 
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(194, 154, 74, 0.11), transparent 65%);
+      z-index: -2;
+    }
+
     .photo-wrap::after {
       content: "";
       position: absolute;
-      right: -48px;
+      right: -50px;
       top: 30px;
-      width: 248px;
-      height: 248px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       background-image: radial-gradient(rgba(194, 154, 74, 0.38) 1.2px, transparent 1.2px);
       background-size: 14px 14px;
@@ -253,7 +263,7 @@
     }
 
     .photo {
-      width: min(345px, 80vw);
+      width: min(350px, 80vw);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       padding: 10px;
@@ -295,17 +305,20 @@
       font-size: 1rem;
     }
 
-    .about {
+    .split-section {
       display: grid;
       grid-template-columns: 0.24fr 1fr;
       gap: 50px;
       align-items: start;
-      padding: 38px 0 44px;
+    }
+
+    .about {
+      padding: 40px 0 46px;
     }
 
     .about p {
       margin: 0;
-      max-width: 790px;
+      max-width: 800px;
       color: #374151;
       font-size: 1.02rem;
     }
@@ -315,21 +328,17 @@
       font-weight: 750;
     }
 
-    .current-card {
-      display: grid;
-      grid-template-columns: 0.24fr 1fr;
-      gap: 50px;
-      align-items: start;
-      padding: 34px 0 42px;
+    .current {
+      padding: 36px 0 44px;
     }
 
     .current-box {
-      background: rgba(255, 255, 255, 0.70);
+      background: rgba(255, 255, 255, 0.76);
       border: 1px solid var(--line);
       border-left: 4px solid var(--gold);
       border-radius: 14px;
       padding: 26px 28px;
-      box-shadow: 0 12px 28px rgba(6, 26, 51, 0.05);
+      box-shadow: 0 12px 28px rgba(6, 26, 51, 0.055);
     }
 
     .current-box h3 {
@@ -348,9 +357,6 @@
       color: var(--muted);
       font-size: 0.92rem;
       margin-top: 10px !important;
-    }
-
-    .meta em {
       font-style: italic;
     }
 
@@ -415,6 +421,7 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.94rem;
+      font-style: italic;
     }
 
     .publication-list {
@@ -442,9 +449,6 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.93rem;
-    }
-
-    .publication p em {
       font-style: italic;
     }
 
@@ -484,9 +488,6 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
-    }
-
-    .experience em {
       font-style: italic;
     }
 
@@ -610,27 +611,27 @@
     }
 
     footer {
-  background: rgba(255, 255, 255, 0.72);
-  border-top: 2px solid var(--gold);
-  color: var(--navy);
-  text-align: center;
-  padding: 26px 24px 30px;
-  font-size: 0.9rem;
-  margin-top: 34px;
-}
+      background: rgba(255, 255, 255, 0.72);
+      border-top: 2px solid var(--gold);
+      color: var(--navy);
+      text-align: center;
+      padding: 26px 24px 30px;
+      font-size: 0.9rem;
+      margin-top: 34px;
+    }
 
-.footer-name {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  color: var(--navy);
-}
+    .footer-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      color: var(--navy);
+    }
 
-.privacy-note {
-  display: block;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 0.78rem;
-}
+    .privacy-note {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
 
     @media (max-width: 900px) {
       .links {
@@ -647,20 +648,19 @@
         justify-content: flex-start;
       }
 
+      .photo-wrap::before,
       .photo-wrap::after {
         display: none;
       }
 
-      .about,
-      .current-card,
+      .split-section,
       .research-grid,
       .final-grid,
       .form-row {
         grid-template-columns: 1fr;
       }
 
-      .about,
-      .current-card {
+      .split-section {
         gap: 12px;
       }
 
@@ -751,7 +751,7 @@
       </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="about" class="about split-section">
       <div>
         <p class="kicker">About</p>
       </div>
@@ -760,12 +760,14 @@
         <p>
           I am a <strong>PhD researcher</strong> at the Technical University of Darmstadt
           and the Institut Laue-Langevin in Grenoble. My work focuses on polymer
-          colloids, soft interfaces and advanced characterization methods.
+          colloids, soft interfaces and advanced characterization methods, with a
+          particular interest in how particle-scale properties shape foam structure
+          and material performance.
         </p>
       </div>
     </section>
 
-    <section id="current" class="current-card">
+    <section id="current" class="current split-section">
       <div>
         <p class="kicker">Current work</p>
       </div>
@@ -778,7 +780,7 @@
           organization and confined foam films.
         </p>
         <p class="meta">
-          <em>PhD research · TU Darmstadt · Institut Laue-Langevin · Grenoble</em>
+          PhD research · TU Darmstadt · Institut Laue-Langevin · Grenoble
         </p>
       </div>
     </section>
@@ -795,21 +797,21 @@
           <div class="research-icon">01</div>
           <span>PhD Research</span>
           <h3>Microgel-stabilized aqueous foams</h3>
-          <p><em>TU Darmstadt · Institut Laue-Langevin · 2023 — Present</em></p>
+          <p>TU Darmstadt · Institut Laue-Langevin · 2023 — Present</p>
         </article>
 
         <article class="research-card">
           <div class="research-icon">02</div>
           <span>Master’s Research</span>
           <h3>Graphene and hBN growth on copper surfaces</h3>
-          <p><em>ESRF · CEA Grenoble · 2023</em></p>
+          <p>ESRF · CEA Grenoble · 2023</p>
         </article>
 
         <article class="research-card">
           <div class="research-icon">03</div>
           <span>Research Internship</span>
           <h3>Nanowire device fabrication and encapsulation</h3>
-          <p><em>CNRS Institut Néel · Grenoble · 2022</em></p>
+          <p>CNRS Institut Néel · Grenoble · 2022</p>
         </article>
       </div>
     </section>
@@ -824,7 +826,7 @@
         <article class="publication">
           <div>
             <h3>Multiscale Structure of Microgel-Containing Foams: From Particle Mechanics to Confined Films</h3>
-            <p><em>Manmeet Kaur Sodhi et al. · Manuscript in preparation</em></p>
+            <p>Manmeet Kaur Sodhi et al. · Manuscript in preparation</p>
           </div>
           <div class="year">In prep.</div>
         </article>
@@ -832,7 +834,7 @@
         <article class="publication">
           <div>
             <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper Surfaces</h3>
-            <p><em>Advanced Science</em></p>
+            <p>Advanced Science</p>
           </div>
           <div class="year">2026</div>
         </article>
@@ -840,7 +842,7 @@
         <article class="publication">
           <div>
             <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
-            <p><em>Journal of Chemical Physics · 163, 174906</em></p>
+            <p>Journal of Chemical Physics · 163, 174906</p>
           </div>
           <div class="year">2025</div>
         </article>
@@ -848,7 +850,7 @@
         <article class="publication">
           <div>
             <h3>AlN Nanowire-Based Vertically Integrated Piezoelectric Nanogenerators</h3>
-            <p><em>ACS Applied Nano Materials · 7</em></p>
+            <p>ACS Applied Nano Materials · 7</p>
           </div>
           <div class="year">2024</div>
         </article>
@@ -866,7 +868,7 @@
           <div class="date">2023 — Present</div>
           <div>
             <h3>Doctoral Researcher · TU Darmstadt & Institut Laue-Langevin</h3>
-            <p><em>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</em></p>
+            <p>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</p>
           </div>
         </div>
 
@@ -874,7 +876,7 @@
           <div class="date">2023</div>
           <div>
             <h3>Master’s Research · ESRF & CEA Grenoble</h3>
-            <p><em>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</em></p>
+            <p>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</p>
           </div>
         </div>
 
@@ -882,7 +884,7 @@
           <div class="date">2022</div>
           <div>
             <h3>Research Internship · CNRS Institut Néel</h3>
-            <p><em>Nanowire device fabrication, encapsulation and microscopy-based characterization.</em></p>
+            <p>Nanowire device fabrication, encapsulation and microscopy-based characterization.</p>
           </div>
         </div>
       </div>
@@ -942,7 +944,8 @@
   </main>
 
   <footer>
-  <span class="footer-name">Manmeet Kaur Sodhi</span> · © 2026
-</footer>
+    <span class="footer-name">Manmeet Kaur Sodhi</span> · © 2026
+    <span class="privacy-note">Website analytics are used to understand visits in aggregate.</span>
+  </footer>
 </body>
 </html>
