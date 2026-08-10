@@ -22,18 +22,22 @@
 
   <style>
     :root {
-      --bg: #f8fafc;
+      --bg: #f7f5f0;
       --white: #ffffff;
       --ink: #111827;
-      --muted: #64748b;
-      --navy: #061b3a;
-      --navy-2: #0b2a55;
-      --blue: #1f5f8b;
-      --blue-soft: #eaf2f8;
-      --line: #dbe3ea;
-      --soft: #f1f5f9;
-      --soft-2: #eaf0f6;
-      --max: 1080px;
+      --muted: #6b7280;
+
+      --navy: #061a33;
+      --navy-2: #0b2545;
+
+      --gold: #c29a4a;
+      --gold-soft: #f3ead8;
+
+      --line: #ded8cc;
+      --soft: #efeee9;
+      --soft-2: #f5f1e8;
+
+      --max: 1120px;
     }
 
     * {
@@ -49,7 +53,7 @@
       background: var(--bg);
       color: var(--ink);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      line-height: 1.6;
+      line-height: 1.62;
       overflow-x: hidden;
     }
 
@@ -59,9 +63,9 @@
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(circle at 15% 14%, rgba(31, 95, 139, 0.08), transparent 30rem),
-        radial-gradient(circle at 82% 15%, rgba(6, 27, 58, 0.08), transparent 26rem),
-        linear-gradient(180deg, #f8fafc 0%, #ffffff 45%, #edf3f8 100%);
+        radial-gradient(circle at 13% 12%, rgba(194, 154, 74, 0.12), transparent 28rem),
+        radial-gradient(circle at 84% 16%, rgba(6, 26, 51, 0.08), transparent 26rem),
+        linear-gradient(180deg, #f7f5f0 0%, #ffffff 44%, #efeee9 100%);
     }
 
     a {
@@ -73,15 +77,15 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: var(--navy);
-      color: white;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      background: rgba(247, 245, 240, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 15px 24px;
+      padding: 18px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -91,7 +95,7 @@
     .brand {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.2rem;
-      color: white;
+      color: var(--navy);
       font-weight: 700;
       letter-spacing: 0.01em;
     }
@@ -100,20 +104,31 @@
       display: flex;
       align-items: center;
       gap: 26px;
-      color: rgba(255,255,255,0.88);
+      color: var(--navy);
       font-size: 0.94rem;
     }
 
+    .links a {
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
+
     .links a:hover {
-      color: white;
+      color: var(--gold);
+      border-bottom-color: var(--gold);
     }
 
     .nav-button {
-      padding: 8px 13px;
-      border: 1px solid rgba(255,255,255,0.55);
+      padding: 8px 14px !important;
       border-radius: 8px;
-      color: white;
+      background: var(--navy);
+      color: white !important;
+      border-bottom: none !important;
       font-weight: 700;
+    }
+
+    .nav-button:hover {
+      background: var(--navy-2);
     }
 
     main {
@@ -124,16 +139,16 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.06fr 0.94fr;
       align-items: center;
-      gap: 64px;
-      padding: 60px 0 54px;
+      gap: 68px;
+      padding: 68px 0 62px;
       position: relative;
     }
 
     .eyebrow {
       margin: 0 0 16px;
-      color: var(--blue);
+      color: var(--gold);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.18em;
@@ -148,31 +163,38 @@
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.25rem, 6.5vw, 5.65rem);
+      font-size: clamp(3.35rem, 6.7vw, 5.9rem);
       font-weight: 500;
       letter-spacing: -0.055em;
     }
 
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 3.8vw, 2.65rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
     .subtitle {
       margin: 18px 0 0;
-      color: var(--navy-2);
-      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      color: var(--gold);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
       font-weight: 500;
     }
 
     .keywords {
       margin: 12px 0 0;
       max-width: 620px;
-      color: var(--blue);
+      color: var(--navy-2);
       font-size: 0.98rem;
       font-weight: 500;
     }
 
     .intro {
-      margin: 26px 0 0;
-      max-width: 600px;
-      color: #334155;
-      font-size: 1.04rem;
+      margin: 27px 0 0;
+      max-width: 610px;
+      color: #374151;
+      font-size: 1.05rem;
     }
 
     .buttons {
@@ -190,9 +212,9 @@
       border-radius: 8px;
       font-weight: 700;
       font-size: 0.94rem;
-      border: 1px solid var(--navy-2);
-      background: white;
-      color: var(--navy-2);
+      border: 1px solid var(--gold);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--navy);
       transition: 0.2s ease;
     }
 
@@ -204,7 +226,11 @@
 
     .button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(6, 27, 58, 0.10);
+      box-shadow: 0 10px 22px rgba(6, 26, 51, 0.10);
+    }
+
+    .button.dark:hover {
+      background: var(--navy-2);
     }
 
     .photo-wrap {
@@ -216,24 +242,24 @@
     .photo-wrap::after {
       content: "";
       position: absolute;
-      right: -44px;
-      top: 32px;
-      width: 240px;
-      height: 240px;
+      right: -48px;
+      top: 30px;
+      width: 248px;
+      height: 248px;
       border-radius: 50%;
-      background-image: radial-gradient(rgba(31, 95, 139, 0.28) 1.2px, transparent 1.2px);
-      background-size: 13px 13px;
+      background-image: radial-gradient(rgba(194, 154, 74, 0.38) 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
       z-index: -1;
     }
 
     .photo {
-      width: min(330px, 80vw);
+      width: min(345px, 80vw);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
-      padding: 9px;
+      padding: 10px;
       background: white;
-      border: 1px solid var(--line);
-      box-shadow: 0 24px 52px rgba(6, 27, 58, 0.16);
+      border: 1px solid rgba(194, 154, 74, 0.55);
+      box-shadow: 0 24px 56px rgba(6, 26, 51, 0.16);
     }
 
     .photo img {
@@ -246,12 +272,12 @@
     }
 
     section {
-      padding: 54px 0;
+      padding: 56px 0;
       border-top: 1px solid var(--line);
     }
 
     .kicker {
-      color: var(--blue);
+      color: var(--gold);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.15em;
@@ -259,19 +285,8 @@
       margin: 0 0 12px;
     }
 
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(1.85rem, 3.6vw, 2.55rem);
-      font-weight: 500;
-      letter-spacing: -0.035em;
-    }
-
     .section-head {
-      margin-bottom: 28px;
-    }
-
-    .section-head.center {
-      text-align: center;
+      margin-bottom: 30px;
     }
 
     .small-text {
@@ -282,26 +297,66 @@
 
     .about {
       display: grid;
-      grid-template-columns: 0.22fr 1fr;
-      gap: 48px;
+      grid-template-columns: 0.24fr 1fr;
+      gap: 50px;
       align-items: start;
-      padding: 36px 0 42px;
+      padding: 38px 0 44px;
     }
 
     .about p {
       margin: 0;
-      max-width: 760px;
-      color: #334155;
-      font-size: 1rem;
+      max-width: 790px;
+      color: #374151;
+      font-size: 1.02rem;
     }
 
     .about strong {
       color: var(--navy);
+      font-weight: 750;
+    }
+
+    .current-card {
+      display: grid;
+      grid-template-columns: 0.24fr 1fr;
+      gap: 50px;
+      align-items: start;
+      padding: 34px 0 42px;
+    }
+
+    .current-box {
+      background: rgba(255, 255, 255, 0.70);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: 14px;
+      padding: 26px 28px;
+      box-shadow: 0 12px 28px rgba(6, 26, 51, 0.05);
+    }
+
+    .current-box h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .current-box p {
+      margin: 0;
+      color: #374151;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px !important;
+    }
+
+    .meta em {
+      font-style: italic;
     }
 
     .band {
-      background: linear-gradient(180deg, #eef4f8, #eaf0f6);
-      box-shadow: 0 0 0 100vmax #eef4f8;
+      background: linear-gradient(180deg, var(--soft-2), var(--soft));
+      box-shadow: 0 0 0 100vmax var(--soft-2);
       clip-path: inset(0 -100vmax);
     }
 
@@ -315,14 +370,20 @@
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: 14px;
-      padding: 24px;
-      min-height: 185px;
-      box-shadow: 0 12px 28px rgba(6, 27, 58, 0.08);
+      padding: 25px;
+      min-height: 190px;
+      box-shadow: 0 12px 28px rgba(6, 26, 51, 0.07);
+      transition: 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(6, 26, 51, 0.10);
     }
 
     .research-icon {
-      width: 44px;
-      height: 44px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -330,15 +391,15 @@
       color: white;
       font-weight: 800;
       margin-bottom: 16px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
     .research-card span {
       display: block;
-      color: var(--blue);
-      font-size: 0.78rem;
+      color: var(--gold);
+      font-size: 0.76rem;
       font-weight: 800;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
@@ -383,8 +444,12 @@
       font-size: 0.93rem;
     }
 
+    .publication p em {
+      font-style: italic;
+    }
+
     .year {
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 800;
       font-size: 0.9rem;
       white-space: nowrap;
@@ -404,7 +469,7 @@
     }
 
     .date {
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 750;
       font-size: 0.93rem;
     }
@@ -421,9 +486,13 @@
       font-size: 0.95rem;
     }
 
+    .experience em {
+      font-style: italic;
+    }
+
     .final-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
+      grid-template-columns: 0.86fr 1.14fr;
       gap: 24px;
       align-items: stretch;
     }
@@ -434,12 +503,13 @@
       padding: 30px;
       background: white;
       border: 1px solid var(--line);
-      box-shadow: 0 12px 28px rgba(6, 27, 58, 0.08);
+      box-shadow: 0 12px 28px rgba(6, 26, 51, 0.07);
     }
 
     .cv-card {
       background: var(--navy);
       color: white;
+      border-color: var(--navy);
     }
 
     .cv-card h3,
@@ -461,6 +531,12 @@
     .cv-card p {
       margin: 0;
       color: rgba(255, 255, 255, 0.78);
+    }
+
+    .cv-card .button {
+      background: white;
+      color: var(--navy);
+      border-color: white;
     }
 
     .ask-card p {
@@ -494,7 +570,7 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 10px 11px;
-      background: #f8fafc;
+      background: #fbfaf7;
       color: var(--ink);
       font: inherit;
       outline: none;
@@ -502,8 +578,8 @@
 
     .question-form input:focus,
     .question-form textarea:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(31, 95, 139, 0.12);
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(194, 154, 74, 0.15);
     }
 
     .question-form button {
@@ -529,7 +605,7 @@
     }
 
     .form-note a {
-      color: var(--blue);
+      color: var(--gold);
       font-weight: 700;
     }
 
@@ -542,15 +618,22 @@
       margin-top: 34px;
     }
 
-    @media (max-width: 880px) {
+    .privacy-note {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255,255,255,0.58);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
       .links {
         display: none;
       }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 38px;
-        padding: 52px 0 56px;
+        gap: 40px;
+        padding: 54px 0 56px;
       }
 
       .photo-wrap {
@@ -562,13 +645,15 @@
       }
 
       .about,
+      .current-card,
       .research-grid,
       .final-grid,
       .form-row {
         grid-template-columns: 1fr;
       }
 
-      .about {
+      .about,
+      .current-card {
         gap: 12px;
       }
 
@@ -584,7 +669,7 @@
       }
 
       .nav {
-        padding: 14px 18px;
+        padding: 15px 18px;
       }
 
       h1 {
@@ -597,7 +682,8 @@
 
       .research-card,
       .cv-card,
-      .ask-card {
+      .ask-card,
+      .current-box {
         padding: 23px;
       }
 
@@ -616,6 +702,7 @@
 
       <div class="links">
         <a href="#about">About</a>
+        <a href="#current">Current</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
@@ -671,6 +758,24 @@
       </div>
     </section>
 
+    <section id="current" class="current-card">
+      <div>
+        <p class="kicker">Current work</p>
+      </div>
+
+      <div class="current-box">
+        <h3>Microgel-stabilized aqueous foams</h3>
+        <p>
+          I am currently preparing a manuscript on the multiscale structure of
+          microgel-containing foams, linking particle mechanics, interfacial
+          organization and confined foam films.
+        </p>
+        <p class="meta">
+          <em>PhD research · TU Darmstadt · Institut Laue-Langevin · Grenoble</em>
+        </p>
+      </div>
+    </section>
+
     <section id="research" class="band">
       <div class="section-head">
         <p class="kicker">Research</p>
@@ -683,21 +788,21 @@
           <div class="research-icon">01</div>
           <span>PhD Research</span>
           <h3>Microgel-stabilized aqueous foams</h3>
-          <p>TU Darmstadt · Institut Laue-Langevin</p>
+          <p><em>TU Darmstadt · Institut Laue-Langevin · 2023 — Present</em></p>
         </article>
 
         <article class="research-card">
           <div class="research-icon">02</div>
           <span>Master’s Research</span>
           <h3>Graphene and hBN growth on copper surfaces</h3>
-          <p>ESRF · CEA Grenoble</p>
+          <p><em>ESRF · CEA Grenoble · 2023</em></p>
         </article>
 
         <article class="research-card">
           <div class="research-icon">03</div>
           <span>Research Internship</span>
           <h3>Nanowire device fabrication and encapsulation</h3>
-          <p>CNRS Institut Néel · Grenoble</p>
+          <p><em>CNRS Institut Néel · Grenoble · 2022</em></p>
         </article>
       </div>
     </section>
@@ -712,7 +817,7 @@
         <article class="publication">
           <div>
             <h3>Multiscale Structure of Microgel-Containing Foams: From Particle Mechanics to Confined Films</h3>
-            <p>Manmeet Kaur Sodhi et al. · Manuscript in preparation</p>
+            <p><em>Manmeet Kaur Sodhi et al. · Manuscript in preparation</em></p>
           </div>
           <div class="year">In prep.</div>
         </article>
@@ -720,7 +825,7 @@
         <article class="publication">
           <div>
             <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper Surfaces</h3>
-            <p>Advanced Science</p>
+            <p><em>Advanced Science</em></p>
           </div>
           <div class="year">2026</div>
         </article>
@@ -728,7 +833,7 @@
         <article class="publication">
           <div>
             <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
-            <p>Journal of Chemical Physics · 163, 174906</p>
+            <p><em>Journal of Chemical Physics · 163, 174906</em></p>
           </div>
           <div class="year">2025</div>
         </article>
@@ -736,7 +841,7 @@
         <article class="publication">
           <div>
             <h3>AlN Nanowire-Based Vertically Integrated Piezoelectric Nanogenerators</h3>
-            <p>ACS Applied Nano Materials · 7</p>
+            <p><em>ACS Applied Nano Materials · 7</em></p>
           </div>
           <div class="year">2024</div>
         </article>
@@ -754,7 +859,7 @@
           <div class="date">2023 — Present</div>
           <div>
             <h3>Doctoral Researcher · TU Darmstadt & Institut Laue-Langevin</h3>
-            <p>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</p>
+            <p><em>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</em></p>
           </div>
         </div>
 
@@ -762,7 +867,7 @@
           <div class="date">2023</div>
           <div>
             <h3>Master’s Research · ESRF & CEA Grenoble</h3>
-            <p>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</p>
+            <p><em>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</em></p>
           </div>
         </div>
 
@@ -770,7 +875,7 @@
           <div class="date">2022</div>
           <div>
             <h3>Research Internship · CNRS Institut Néel</h3>
-            <p>Nanowire device fabrication, encapsulation and microscopy-based characterization.</p>
+            <p><em>Nanowire device fabrication, encapsulation and microscopy-based characterization.</em></p>
           </div>
         </div>
       </div>
@@ -798,6 +903,8 @@
           </p>
 
           <form class="question-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input type="hidden" name="_subject" value="New question from sodhimanmeet.com">
+
             <div class="form-row">
               <label>
                 Name
@@ -829,6 +936,7 @@
 
   <footer>
     © 2026 Manmeet Kaur Sodhi
+    <span class="privacy-note">Website analytics are used to understand visits in aggregate.</span>
   </footer>
 </body>
 </html>
