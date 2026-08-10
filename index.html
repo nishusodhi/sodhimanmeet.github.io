@@ -1,27 +1,873 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Manmeet Kaur Sodhi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Manmeet Kaur Sodhi | Polymer & Colloid Scientist</title>
+
+  <meta name="description" content="Manmeet Kaur Sodhi — Polymer and colloid scientist working on soft matter, particle characterization, AFM, DLS, scattering, neutron reflectometry, interfaces and scientific instrumentation." />
+
+  <style>
+    :root {
+      --navy: #08264a;
+      --navy-dark: #041a34;
+      --teal: #0f8f8c;
+      --teal-light: #e8f6f5;
+      --ink: #172033;
+      --muted: #5f6b7a;
+      --line: #dfe8ee;
+      --paper: #fbfcfd;
+      --white: #ffffff;
+      --soft: #f4f8fa;
+      --shadow: 0 18px 45px rgba(8, 38, 74, 0.10);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .seal {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width 0.18s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      background:
+        radial-gradient(circle at 14% 24%, rgba(15,143,140,0.08), transparent 25%),
+        radial-gradient(circle at 70% 40%, rgba(15,143,140,0.10), transparent 24%),
+        linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 28px 58px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.9rem, 6vw, 5.2rem);
+      line-height: 1.02;
+      font-weight: 500;
+      color: var(--navy-dark);
+      letter-spacing: -0.045em;
+      margin-bottom: 10px;
+    }
+
+    .role {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.55rem, 2.8vw, 2.05rem);
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .keywords {
+      color: var(--ink);
+      font-weight: 600;
+      margin-bottom: 22px;
+      letter-spacing: 0.01em;
+    }
+
+    .keywords span {
+      margin: 0 12px;
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 690px;
+      font-size: 1.03rem;
+      color: #3a4656;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(8,38,74,0.10);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+    }
+
+    .btn-outline {
+      background: white;
+      color: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .portrait-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .portrait-card {
+      position: relative;
+      width: min(360px, 90vw);
+      height: min(360px, 90vw);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 28%, #ffffff 0%, #edf7f7 38%, #dcecef 100%);
+      border: 1px solid #c9dfe3;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .portrait-card::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(15,143,140,0.32);
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+      transform: rotate(-15deg);
+    }
+
+    .portrait-initials {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 4.2rem;
+      color: var(--navy);
+      letter-spacing: -0.08em;
+      z-index: 2;
+    }
+
+    .floating-note {
+      position: absolute;
+      left: -20px;
+      top: 78px;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 16px 17px;
+      width: 190px;
+      z-index: 3;
+    }
+
+    .floating-note div {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 9px;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .floating-note div:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background: var(--teal-light);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* ================= MAIN ================= */
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 28px 70px;
+    }
+
+    section {
+      scroll-margin-top: 86px;
+    }
+
+    .section-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 24px;
+      margin: 20px 0 28px;
+      align-items: start;
+    }
+
+    .section-label {
+      color: var(--navy);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.4;
+      font-size: 0.98rem;
+      padding-top: 12px;
+    }
+
+    .section-label::after {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 2px;
+      background: var(--teal);
+      margin-top: 12px;
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(8,38,74,0.055);
+      padding: 22px;
+      min-height: 150px;
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      font-size: 1.02rem;
+      margin-bottom: 7px;
+      line-height: 1.35;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(8,38,74,0.055);
+      padding: 28px;
+    }
+
+    .panel h2 {
+      color: var(--navy);
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 14px;
+    }
+
+    .project-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
+      line-height: 1.16;
+      color: var(--navy-dark);
+      margin-bottom: 12px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .list {
+      margin-top: 12px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 13px;
+    }
+
+    .timeline-item {
+      border-left: 3px solid var(--teal);
+      padding-left: 16px;
+      margin-bottom: 14px;
+    }
+
+    .timeline-item h3 {
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .timeline-item .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 45px 1fr 70px;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .pub-no {
+      color: var(--teal);
+      font-weight: 800;
+    }
+
+    .publication h3 {
+      color: var(--ink);
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .publication p {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+    }
+
+    .pub-link {
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-align: right;
+    }
+
+    .cv-card {
+      background: linear-gradient(135deg, #f1fbfb, #ffffff);
+      border: 1px solid #cbe7e8;
+    }
+
+    .cv-button {
+      margin-top: 15px;
+      width: fit-content;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 1px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 26px 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 980px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .portrait-wrap {
+        justify-content: flex-start;
+      }
+
+      .floating-note {
+        left: 260px;
+        top: 50px;
+      }
+
+      .cards-4,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .hero-inner {
+        padding-top: 44px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .portrait-card {
+        width: 260px;
+        height: 260px;
+      }
+
+      .floating-note {
+        position: static;
+        margin-top: 18px;
+      }
+
+      .cards-4,
+      .grid-2,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+        grid-template-columns: 36px 1fr;
+      }
+
+      .pub-link {
+        grid-column: 2;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Manmeet Kaur Sodhi</h1>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="#home">
+        <span class="seal">M</span>
+        <span>Manmeet Kaur Sodhi</span>
+      </a>
 
-<p>PhD Researcher – Soft Matter Physics</p>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<h2>Research Interests</h2>
+  <section class="hero" id="home">
+    <div class="hero-inner">
 
-<ul>
-<li>PNIPAM microgels</li>
-<li>Soft matter at interfaces</li>
-<li>Neutron scattering</li>
-<li>AFM force spectroscopy</li>
-</ul>
+      <div>
+        <h1>Manmeet Kaur Sodhi</h1>
 
-<h2>Contact</h2>
+        <div class="role">Polymer &amp; Colloid Scientist</div>
 
-<p>Email: sodhimk@ill.fr</p>
+        <div class="keywords">
+          Soft Matter <span>|</span> Particle Characterization <span>|</span> Scientific Instrumentation
+        </div>
+
+        <p class="intro">
+          I investigate polymer-colloid systems and soft interfaces using advanced
+          characterization tools including AFM, DLS, scattering techniques and microscopy.
+          My work connects particle-scale mechanics and structure to macroscopic material
+          performance, with applications in foams, coatings and functional soft materials.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#cv">Download CV</a>
+          <a class="btn btn-outline" href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="portrait-wrap">
+        <div class="floating-note">
+          <div><span class="icon">S</span><span>Soft Matter<br>&amp; Interfaces</span></div>
+          <div><span class="icon">A</span><span>AFM, DLS<br>&amp; Scattering</span></div>
+          <div><span class="icon">M</span><span>Mechanics to<br>Performance</span></div>
+        </div>
+
+        <div class="portrait-card">
+          <div class="portrait-initials">MKS</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main>
+
+    <section class="section-row" id="research">
+      <div class="section-label">Research<br>Focus</div>
+
+      <div>
+        <div class="cards-4">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3>Microgel-Stabilized Foams</h3>
+            <p>
+              Structure, stability and drainage of particle-stabilized aqueous foams.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3>AFM Force Spectroscopy</h3>
+            <p>
+              Mechanical response, deformation and force mapping of soft polymer particles.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3>SANS / SAXS &amp; Reflectometry</h3>
+            <p>
+              Mesoscale structure and interfacial organization in complex soft-matter systems.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">04</div>
+            <h3>Polymer Colloids &amp; Interfaces</h3>
+            <p>
+              Colloid-polymer interactions, confinement and structure-property relationships.
+            </p>
+          </article>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="panel">
+            <h2>PhD Project</h2>
+            <div class="project-title">Microgel-stabilized aqueous foams</div>
+            <p>
+              My doctoral research examines how PNIPAM microgel composition, charge and
+              crosslinking control particle mechanics, interfacial organization and foam structure.
+            </p>
+            <ul class="list">
+              <li>AFM force spectroscopy and nanomechanical mapping of soft polymer particles.</li>
+              <li>DLS, zeta potential and microscopy for particle and dispersion characterization.</li>
+              <li>SANS/SAXS and neutron reflectometry for foam films and confined structures.</li>
+              <li>Structure-property relationships across particle, interface and foam length scales.</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h2>Master Thesis</h2>
+            <div class="project-title">Graphene and hBN growth on copper</div>
+            <p>
+              At ESRF and CEA, I investigated graphene and hexagonal boron nitride growth
+              on liquid and single-crystal copper using operando imaging and synchrotron
+              X-ray techniques.
+            </p>
+            <ul class="list">
+              <li>Synchrotron XRD and XRR for interfacial structure and thin-film growth.</li>
+              <li>Python-based video analysis of graphene-flake motion and self-organization.</li>
+              <li>Collaboration with beamline scientists on measurement strategy and interpretation.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-2" id="experience">
+
+      <article class="panel">
+        <h2>Experience</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Doctoral Researcher — TU Darmstadt &amp; Institut Laue-Langevin</h3>
+            <div class="meta">Nov 2023 — Present | Darmstadt / Grenoble</div>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Master's Research Thesis — ESRF &amp; CEA</h3>
+            <div class="meta">Feb 2023 — Aug 2023 | Grenoble</div>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Graduate Research Intern — CNRS Institut Néel</h3>
+            <div class="meta">Feb 2022 — Jun 2022 | Grenoble</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Education</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>PhD Researcher, Soft Matter at Interfaces</h3>
+            <div class="meta">Technical University of Darmstadt | 2023 — Present</div>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Master 2, Nanophysics</h3>
+            <div class="meta">Université Grenoble Alpes | 2022 — 2023</div>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Bachelor of Science, Physics</h3>
+            <div class="meta">Guru Nanak Dev University | 2015 — 2018</div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <section class="grid-2" id="publications">
+
+      <article class="panel">
+        <h2>Selected Publications</h2>
+
+        <div class="publication">
+          <div class="pub-no">01</div>
+          <div>
+            <h3>Multiscale Structure of Microgel-Containing Foams</h3>
+            <p>Manuscript in preparation.</p>
+          </div>
+          <a class="pub-link" href="#">Soon</a>
+        </div>
+
+        <div class="publication">
+          <div class="pub-no">02</div>
+          <div>
+            <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper</h3>
+            <p>Advanced Science, 2026.</p>
+          </div>
+          <a class="pub-link" href="#">View</a>
+        </div>
+
+        <div class="publication">
+          <div class="pub-no">03</div>
+          <div>
+            <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
+            <p>Journal of Chemical Physics, 163, 174906, 2025.</p>
+          </div>
+          <a class="pub-link" href="#">View</a>
+        </div>
+      </article>
+
+      <article class="panel cv-card" id="cv">
+        <h2>Curriculum Vitae</h2>
+        <div class="project-title">Industrial R&amp;D and application science profile</div>
+        <p>
+          My CV summarizes my background in polymer colloids, particle characterization,
+          scientific instrumentation, large-scale facility experiments and data analysis.
+        </p>
+
+        <a class="btn btn-primary cv-button" href="#contact">CV will be added soon</a>
+      </article>
+
+    </section>
+
+    <section class="panel" id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-item">
+            <span class="icon">E</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="icon">L</span>
+            <div>
+              <strong>Location</strong>
+              Grenoble, France
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-item">
+            <span class="icon">in</span>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/manmeet-kaur-sodhi-a94039223/">linkedin.com/in/manmeet-kaur-sodhi-a94039223</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <span class="icon">G</span>
+            <div>
+              <strong>GitHub</strong>
+              <a href="https://github.com/nishusodhi">github.com/nishusodhi</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Manmeet Kaur Sodhi · Polymer &amp; Colloid Scientist
+  </footer>
 
 </body>
 </html>
