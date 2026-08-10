@@ -610,20 +610,27 @@
     }
 
     footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.82);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.88rem;
-      margin-top: 34px;
-    }
+  background: rgba(255, 255, 255, 0.72);
+  border-top: 2px solid var(--gold);
+  color: var(--navy);
+  text-align: center;
+  padding: 26px 24px 30px;
+  font-size: 0.9rem;
+  margin-top: 34px;
+}
 
-    .privacy-note {
-      display: block;
-      margin-top: 6px;
-      color: rgba(255,255,255,0.58);
-      font-size: 0.78rem;
-    }
+.footer-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.privacy-note {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
 
     @media (max-width: 900px) {
       .links {
@@ -935,7 +942,7 @@
   </main>
 
   <footer>
-    ©Manmeet Kaur Sodhi
-  </footer>
+  <span class="footer-name">Manmeet Kaur Sodhi</span> · © 2026
+</footer>
 </body>
 </html>
