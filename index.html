@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Manmeet Kaur Sodhi | Polymer & Colloid Scientist</title>
+  <title>Manmeet Kaur Sodhi | Polymer & Colloid Researcher</title>
 
   <meta
     name="description"
@@ -13,15 +13,15 @@
 
   <style>
     :root {
-      --bg: #fbfaf7;
+      --bg: #fffdf8;
       --white: #ffffff;
-      --ink: #13202a;
-      --muted: #687782;
-      --navy: #0b2545;
-      --teal: #238b86;
-      --line: #e3e7e8;
-      --soft: #eef6f5;
-      --max: 1040px;
+      --ink: #171717;
+      --muted: #626b72;
+      --navy: #1f2a44;
+      --gold: #8a6f3d;
+      --line: #e7e0d3;
+      --soft: #f6f1e7;
+      --max: 1080px;
     }
 
     * {
@@ -49,7 +49,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(251, 250, 247, 0.94);
+      background: rgba(255, 253, 248, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -65,35 +65,27 @@
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: white;
-      display: grid;
-      place-items: center;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.04em;
+      font-size: 1.15rem;
+      color: var(--navy);
+      font-weight: 600;
     }
 
     .links {
       display: flex;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.93rem;
+      gap: 28px;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .links a {
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
     }
 
     .links a:hover {
-      color: var(--teal);
+      color: var(--gold);
+      border-bottom-color: var(--gold);
     }
 
     main {
@@ -105,15 +97,16 @@
     .hero {
       min-height: calc(100vh - 73px);
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       align-items: center;
-      gap: 72px;
-      padding: 72px 0;
+      gap: 70px;
+      padding: 74px 0 82px;
+      position: relative;
     }
 
     .eyebrow {
       margin: 0 0 18px;
-      color: var(--teal);
+      color: var(--gold);
       font-size: 0.82rem;
       font-weight: 800;
       letter-spacing: 0.16em;
@@ -128,28 +121,28 @@
 
     h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 7vw, 6.2rem);
+      font-size: clamp(3.4rem, 7vw, 6.5rem);
       font-weight: 500;
       letter-spacing: -0.055em;
     }
 
     .subtitle {
-      margin: 22px 0 0;
-      color: var(--teal);
+      margin: 20px 0 0;
+      color: var(--gold);
       font-size: clamp(1.25rem, 2vw, 1.65rem);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .keywords {
       margin: 12px 0 0;
-      color: var(--muted);
+      color: var(--navy);
       font-size: 1.02rem;
     }
 
     .intro {
       margin: 30px 0 0;
-      max-width: 640px;
-      color: #35464f;
+      max-width: 620px;
+      color: #3f4750;
       font-size: 1.08rem;
     }
 
@@ -164,13 +157,13 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 20px;
-      border-radius: 999px;
+      padding: 11px 22px;
+      border-radius: 8px;
       font-weight: 700;
       font-size: 0.94rem;
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--navy);
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
       transition: 0.2s ease;
     }
 
@@ -182,42 +175,40 @@
 
     .button:hover {
       transform: translateY(-1px);
-      border-color: var(--teal);
-      color: var(--teal);
+      background: var(--soft);
     }
 
     .button.dark:hover {
-      background: #12345f;
+      background: #17243d;
       color: white;
-      border-color: #12345f;
     }
 
     .photo-wrap {
       display: flex;
       justify-content: center;
+      position: relative;
+    }
+
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: 25px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      border: 1px dotted rgba(138, 111, 61, 0.35);
+      z-index: -1;
     }
 
     .photo {
-      width: min(350px, 82vw);
+      width: min(355px, 82vw);
       aspect-ratio: 1 / 1;
       border-radius: 50%;
       padding: 10px;
       background: white;
-      border: 1px solid var(--line);
-      box-shadow: 0 24px 55px rgba(16, 33, 43, 0.10);
-      position: relative;
-    }
-
-    .photo::before {
-      content: "";
-      position: absolute;
-      inset: -16px;
-      border-radius: 50%;
-      border: 1px solid rgba(35, 139, 134, 0.28);
-      border-left-color: transparent;
-      border-bottom-color: transparent;
-      transform: rotate(-18deg);
-      pointer-events: none;
+      border: 1px solid rgba(138, 111, 61, 0.45);
+      box-shadow: 0 22px 50px rgba(31, 42, 68, 0.12);
     }
 
     .photo img {
@@ -227,22 +218,23 @@
       object-position: center;
       border-radius: 50%;
       display: block;
+      filter: grayscale(100%);
     }
 
     section {
-      padding: 68px 0;
+      padding: 66px 0;
       border-top: 1px solid var(--line);
     }
 
     .section-head {
       display: grid;
       grid-template-columns: 0.28fr 1fr;
-      gap: 48px;
+      gap: 46px;
       margin-bottom: 34px;
     }
 
     .kicker {
-      color: var(--teal);
+      color: var(--gold);
       font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.15em;
@@ -252,21 +244,21 @@
 
     h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 500;
       letter-spacing: -0.035em;
     }
 
     .small-text {
-      margin: 16px 0 0;
+      margin: 14px 0 0;
       max-width: 700px;
       color: var(--muted);
-      font-size: 1.03rem;
+      font-size: 1.02rem;
     }
 
     .about-text {
-      max-width: 780px;
-      color: #35464f;
+      max-width: 760px;
+      color: #3f4750;
       font-size: 1.06rem;
     }
 
@@ -283,14 +275,15 @@
     .research-card {
       background: var(--white);
       border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 26px;
+      border-radius: 14px;
+      padding: 28px;
       min-height: 210px;
+      box-shadow: 0 12px 28px rgba(31, 42, 68, 0.06);
     }
 
     .research-card span {
       display: block;
-      color: var(--teal);
+      color: var(--gold);
       font-size: 0.78rem;
       font-weight: 800;
       letter-spacing: 0.14em;
@@ -311,15 +304,9 @@
       font-size: 0.96rem;
     }
 
-    .note {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .publication-list {
       display: grid;
-      gap: 14px;
+      gap: 0;
     }
 
     .publication {
@@ -327,13 +314,13 @@
       grid-template-columns: 1fr auto;
       gap: 20px;
       align-items: start;
-      padding: 22px 0;
+      padding: 21px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .publication h3 {
       color: var(--ink);
-      font-size: 1.02rem;
+      font-size: 1.01rem;
       font-weight: 650;
       margin-bottom: 6px;
     }
@@ -345,7 +332,7 @@
     }
 
     .year {
-      color: var(--teal);
+      color: var(--gold);
       font-weight: 800;
       font-size: 0.92rem;
       white-space: nowrap;
@@ -365,7 +352,7 @@
     }
 
     .date {
-      color: var(--teal);
+      color: var(--gold);
       font-weight: 750;
       font-size: 0.94rem;
     }
@@ -391,9 +378,10 @@
 
     .cv-card,
     .contact-card {
-      border-radius: 24px;
-      padding: 30px;
-      min-height: 240px;
+      border-radius: 16px;
+      padding: 32px;
+      min-height: 238px;
+      box-shadow: 0 12px 28px rgba(31, 42, 68, 0.06);
     }
 
     .cv-card {
@@ -415,7 +403,7 @@
 
     .cv-card p {
       margin: 0;
-      color: rgba(255, 255, 255, 0.76);
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .contact-card {
@@ -435,7 +423,7 @@
     }
 
     .contact-links a {
-      color: var(--teal);
+      color: var(--gold);
       font-weight: 700;
       word-break: break-word;
     }
@@ -473,6 +461,10 @@
       .research-grid {
         grid-template-columns: 1fr;
       }
+
+      .photo-wrap::after {
+        display: none;
+      }
     }
 
     @media (max-width: 560px) {
@@ -482,10 +474,6 @@
 
       .nav {
         padding: 15px 18px;
-      }
-
-      .brand span:last-child {
-        display: none;
       }
 
       h1 {
@@ -513,10 +501,7 @@
 <body>
   <header class="header">
     <nav class="nav">
-      <a href="#home" class="brand">
-        <span class="brand-mark">MKS</span>
-        <span>Manmeet Kaur Sodhi</span>
-      </a>
+      <a href="#home" class="brand">Manmeet Kaur Sodhi</a>
 
       <div class="links">
         <a href="#about">About</a>
@@ -536,7 +521,7 @@
 
         <h1>Manmeet Kaur Sodhi</h1>
 
-        <p class="subtitle">Polymer & Colloid Scientist</p>
+        <p class="subtitle">Polymer & Colloid Researcher</p>
 
         <p class="keywords">
           AFM · DLS · SANS/SAXS · Neutron Reflectometry · Particle Characterization
@@ -587,9 +572,7 @@
         <div class="kicker">Research</div>
         <div>
           <h2>Selected research projects.</h2>
-          <p class="small-text">
-            Further details are available in my CV.
-          </p>
+          <p class="small-text">Further details are available in my CV.</p>
         </div>
       </div>
 
