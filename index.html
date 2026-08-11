@@ -1,38 +1,28 @@
-from pathlib import Path
-import re
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-src = Path("/mnt/data/Pasted text(20260811-062919).txt")
-html = src.read_text(encoding="utf-8")
+  <title>Manmeet Kaur Sodhi | Polymer & Colloid Researcher</title>
 
-# Remove ORCID and analytics footer line
-html = re.sub(
-    r'\s*<a href="YOUR_ORCID_URL" target="_blank" rel="noopener">ORCID</a>',
-    '',
-    html
-)
-html = re.sub(
-    r'\s*<span class="privacy-note">Website analytics are used to understand visits in aggregate\.</span>',
-    '',
-    html
-)
+  <meta
+    name="description"
+    content="Personal academic website of Manmeet Kaur Sodhi, PhD researcher in polymer colloids, soft matter, interfaces and particle characterization."
+  />
 
-# Replace palette variables in the user's current structure.
-html = html.replace(
-"""      --bg: #f7f5f0;
-      --white: #ffffff;
-      --ink: #111827;
-      --muted: #6b7280;
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVJF24SC3H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-VVJF24SC3H");
+  </script>
 
-      --navy: #061a33;
-      --navy-2: #0b2545;
-
-      --gold: #c29a4a;
-      --gold-soft: #f3ead8;
-
-      --line: #ded8cc;
-      --soft: #efeee9;
-      --soft-2: #f5f1e8;""",
-"""      --bg: #f4f5f6;
+  <style>
+    :root {
+      --bg: #f4f5f6;
       --white: #ffffff;
       --ink: #20242a;
       --muted: #6f7680;
@@ -45,93 +35,665 @@ html = html.replace(
 
       --line: #d9dde2;
       --soft: #eef1f4;
-      --soft-2: #f6f7f8;"""
-)
+      --soft-2: #f6f7f8;
 
-# Background: same palette on every viewport, quieter and cooler.
-html = html.replace(
-"""      background:
-        radial-gradient(circle at 12% 11%, rgba(194, 154, 74, 0.13), transparent 27rem),
-        radial-gradient(circle at 84% 15%, rgba(6, 26, 51, 0.08), transparent 26rem),
-        linear-gradient(180deg, #f7f5f0 0%, #ffffff 45%, #efeee9 100%);""",
-"""      background:
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
         radial-gradient(circle at 14% 8%, rgba(125, 138, 152, 0.055), transparent 28rem),
         radial-gradient(circle at 88% 16%, rgba(13, 34, 56, 0.035), transparent 32rem),
-        linear-gradient(180deg, #f4f5f6 0%, #fafbfc 50%, #f2f4f6 100%);"""
-)
+        linear-gradient(180deg, #f4f5f6 0%, #fafbfc 50%, #f2f4f6 100%);
+    }
 
-html = html.replace("background: rgba(247, 245, 240, 0.94);",
-                    "background: rgba(244, 245, 246, 0.95);")
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-# Neutralize remaining warm/brown-ish hard-coded elements.
-html = html.replace("color: #374151;", "color: #48515a;")
-html = html.replace("background: #fbfaf7;", "background: #fbfcfd;")
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244, 245, 246, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
 
-# Update rgba values that were tied to old navy/gold.
-html = html.replace("rgba(194, 154, 74, 0.13)", "rgba(125, 138, 152, 0.055)")
-html = html.replace("rgba(6, 26, 51, 0.08)", "rgba(13, 34, 56, 0.035)")
-html = html.replace("rgba(194, 154, 74, 0.11)", "rgba(125, 138, 152, 0.08)")
-html = html.replace("rgba(194, 154, 74, 0.38)", "rgba(125, 138, 152, 0.24)")
-html = html.replace("rgba(194, 154, 74, 0.55)", "rgba(125, 138, 152, 0.34)")
-html = html.replace("rgba(194, 154, 74, 0.15)", "rgba(125, 138, 152, 0.13)")
-html = html.replace("rgba(6, 26, 51, 0.16)", "rgba(13, 34, 56, 0.13)")
-html = html.replace("rgba(6, 26, 51, 0.10)", "rgba(13, 34, 56, 0.09)")
-html = html.replace("rgba(6, 26, 51, 0.055)", "rgba(13, 34, 56, 0.045)")
-html = html.replace("rgba(6, 26, 51, 0.07)", "rgba(13, 34, 56, 0.055)")
+    .nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
 
-# Better desktop hero balance while preserving current visual language.
-html = html.replace("gap: 70px;", "gap: 60px;", 1)
-html = html.replace("padding: 66px 0 58px;", "padding: 62px 0 60px;", 1)
-html = html.replace("font-size: clamp(3.35rem, 6.7vw, 5.85rem);",
-                    "font-size: clamp(3.15rem, 6.2vw, 5.45rem);")
+    .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
 
-# Refine photo without changing it to a completely different design.
-html = html.replace("width: min(350px, 80vw);", "width: min(330px, 78vw);")
-html = html.replace("padding: 10px;", "padding: 8px;", 1)
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      color: var(--navy);
+      font-size: 0.94rem;
+    }
 
-# Replace responsive blocks with stronger phone/tablet behavior.
-old_900 = """    @media (max-width: 900px) {
-      .links {
-        display: none;
-      }
+    .links a {
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
+    }
 
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 54px 0 56px;
-      }
+    .links a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
 
-      .photo-wrap {
-        justify-content: flex-start;
-      }
+    .nav-button {
+      padding: 8px 14px !important;
+      border-radius: 8px;
+      background: var(--navy);
+      color: white !important;
+      border-bottom: none !important;
+      font-weight: 700;
+    }
 
-      .photo-wrap::before,
-      .photo-wrap::after {
-        display: none;
-      }
+    .nav-button:hover {
+      background: var(--navy-2);
+    }
 
-      .split-section,
-      .research-grid,
-      .final-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-      .split-section {
-        gap: 12px;
-      }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      align-items: center;
+      gap: 60px;
+      padding: 62px 0 60px;
+      position: relative;
+    }
 
-      .experience {
-        grid-template-columns: 1fr;
-        gap: 8px;
-      }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
 
-      .cv-profile-block {
-        margin-top: 40px;
-      }
-    }"""
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--navy);
+      line-height: 1.14;
+    }
 
-new_900 = """    @media (max-width: 900px) {
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.15rem, 6.2vw, 5.45rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.9rem, 3.8vw, 2.62rem);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      color: var(--gold);
+      font-size: clamp(1.25rem, 2vw, 1.55rem);
+      font-weight: 500;
+    }
+
+    .keywords {
+      margin: 12px 0 0;
+      max-width: 620px;
+      color: var(--navy-2);
+      font-size: 0.98rem;
+      font-weight: 500;
+    }
+
+    .intro {
+      margin: 27px 0 0;
+      max-width: 610px;
+      color: #48515a;
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      border: 1px solid var(--gold);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--navy);
+      transition: 0.2s ease;
+    }
+
+    .button.dark {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(13, 34, 56, 0.09);
+    }
+
+    .button.dark:hover {
+      background: var(--navy-2);
+    }
+
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(125, 138, 152, 0.08), transparent 65%);
+      z-index: -2;
+    }
+
+    .photo-wrap::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      top: 30px;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-image: radial-gradient(rgba(125, 138, 152, 0.24) 1.2px, transparent 1.2px);
+      background-size: 14px 14px;
+      z-index: -1;
+    }
+
+    .photo {
+      width: min(330px, 78vw);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      padding: 8px;
+      background: white;
+      border: 1px solid rgba(125, 138, 152, 0.34);
+      box-shadow: 0 24px 56px rgba(13, 34, 56, 0.13);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      display: block;
+    }
+
+    section {
+      padding: 56px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    .section-head {
+      margin-bottom: 30px;
+    }
+
+    .small-text {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 0.24fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .about {
+      padding: 40px 0 46px;
+    }
+
+    .about p {
+      margin: 0;
+      max-width: 830px;
+      color: #48515a;
+      font-size: 1.02rem;
+    }
+
+    .about strong {
+      color: var(--navy);
+      font-weight: 750;
+    }
+
+    .current {
+      padding: 36px 0 44px;
+    }
+
+    .current-box {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: 14px;
+      padding: 26px 28px;
+      box-shadow: 0 12px 28px rgba(13, 34, 56, 0.045);
+    }
+
+    .current-box h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .current-box p {
+      margin: 0;
+      color: #48515a;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 10px !important;
+      font-style: italic;
+    }
+
+    .band {
+      background: linear-gradient(180deg, var(--soft-2), var(--soft));
+      box-shadow: 0 0 0 100vmax var(--soft-2);
+      clip-path: inset(0 -100vmax);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .research-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 25px;
+      min-height: 190px;
+      box-shadow: 0 12px 28px rgba(13, 34, 56, 0.055);
+      transition: 0.2s ease;
+    }
+
+    .research-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(13, 34, 56, 0.09);
+    }
+
+    .research-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: white;
+      font-weight: 800;
+      margin-bottom: 16px;
+      font-size: 0.82rem;
+    }
+
+    .research-card span {
+      display: block;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .research-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.28rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .research-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-style: italic;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: start;
+      padding: 19px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication h3 {
+      color: var(--ink);
+      font-size: 1rem;
+      font-weight: 650;
+      margin-bottom: 5px;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+      font-style: italic;
+    }
+
+    .year {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 0.25fr 1fr;
+      gap: 38px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .date {
+      color: var(--gold);
+      font-weight: 750;
+      font-size: 0.93rem;
+    }
+
+    .experience h3 {
+      font-size: 1.03rem;
+      color: var(--ink);
+      margin-bottom: 5px;
+    }
+
+    .experience p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .final-grid {
+      display: grid;
+      grid-template-columns: 0.86fr 1.14fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .cv-card,
+    .ask-card {
+      border-radius: 16px;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 28px rgba(13, 34, 56, 0.055);
+    }
+
+    .cv-card {
+      background: var(--navy);
+      color: white;
+      border-color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .cv-card h3,
+    .ask-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      margin: 0 0 12px;
+    }
+
+    .cv-card h3 {
+      color: white;
+    }
+
+    .ask-card h3 {
+      color: var(--navy);
+    }
+
+    .cv-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .cv-card .button {
+      background: white;
+      color: var(--navy);
+      border-color: white;
+    }
+
+    .ask-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .question-form {
+      display: grid;
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .question-form label {
+      display: grid;
+      gap: 6px;
+      color: var(--navy);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .question-form input,
+    .question-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px 11px;
+      background: #fbfcfd;
+      color: var(--ink);
+      font: inherit;
+      outline: none;
+    }
+
+    .question-form input:focus,
+    .question-form textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(125, 138, 152, 0.13);
+    }
+
+    .question-form button {
+      justify-self: start;
+      margin-top: 2px;
+      padding: 11px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .question-form button:hover {
+      background: var(--navy-2);
+    }
+
+    .form-note {
+      margin-top: 16px !important;
+      font-size: 0.9rem;
+    }
+
+    .form-note a {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .profile-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 0;
+    }
+
+    .profile-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--navy);
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .profile-links a:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .cv-profile-block {
+      margin-top: 82px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cv-profile-title {
+      margin: 0 0 5px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .cv-profile-block .profile-links {
+      margin-top: 0;
+      gap: 9px;
+    }
+
+    .cv-profile-block .profile-links a {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.26);
+      color: white;
+    }
+
+    .cv-profile-block .profile-links a:hover {
+      border-color: var(--gold);
+      color: var(--gold-soft);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.72);
+      border-top: 2px solid var(--gold);
+      color: var(--navy);
+      text-align: center;
+      padding: 26px 24px 30px;
+      font-size: 0.9rem;
+      margin-top: 34px;
+    }
+
+    .footer-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .privacy-note {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 900px) {
       .links {
         display: none;
       }
@@ -182,41 +744,9 @@ new_900 = """    @media (max-width: 900px) {
       .cv-profile-block {
         margin-top: 36px;
       }
-    }"""
+    }
 
-html = html.replace(old_900, new_900)
-
-old_560 = """    @media (max-width: 560px) {
-      main {
-        padding: 0 18px;
-      }
-
-      .nav {
-        padding: 15px 18px;
-      }
-
-      h1 {
-        font-size: 3rem;
-      }
-
-      section {
-        padding: 48px 0;
-      }
-
-      .research-card,
-      .cv-card,
-      .ask-card,
-      .current-box {
-        padding: 23px;
-      }
-
-      .publication {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-    }"""
-
-new_560 = """    @media (max-width: 560px) {
+    @media (max-width: 560px) {
       main {
         padding: 0 20px;
       }
@@ -327,13 +857,265 @@ new_560 = """    @media (max-width: 560px) {
       footer {
         padding: 22px 20px 26px;
       }
-    }"""
+    }
+  </style>
+</head>
 
-html = html.replace(old_560, new_560)
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#home" class="brand">Manmeet Kaur Sodhi</a>
 
-out = Path("/mnt/data/index_final_navy_responsive.html")
-out.write_text(html, encoding="utf-8")
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#current">Current</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#cv">CV</a>
+        <a href="#ask" class="nav-button">Ask me a question</a>
+      </div>
+    </nav>
+  </header>
 
-print(f"Created: {out}")
-print("ORCID present:", "ORCID" in html)
-print("Analytics footer text present:", "Website analytics are used" in html)
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">Soft Matter · Interfaces · Characterization</p>
+
+        <h1>Manmeet Kaur Sodhi</h1>
+
+        <p class="subtitle">Polymer & Colloid Researcher</p>
+
+        <p class="keywords">
+          AFM · DLS · SANS/SAXS · Neutron Reflectometry · Particle Characterization
+        </p>
+
+        <p class="intro">
+          I study soft colloidal particles at fluid interfaces, linking particle
+  structure and mechanics to interfacial organization and material response.
+        </p>
+
+        <div class="buttons">
+          <a class="button dark" href="#research">Research</a>
+          <a class="button" href="#publications">Publications</a>
+          <a class="button" href="#ask">Contact</a>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div class="photo">
+          <img src="manmeet.jpg" alt="Manmeet Kaur Sodhi" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about split-section">
+      <div>
+        <p class="kicker">About</p>
+      </div>
+
+      <div>
+        <p>
+          I am a <strong>PhD researcher</strong> at the Technical University of Darmstadt
+          and the Institut Laue-Langevin in Grenoble. My work focuses on soft polymer
+          colloids in aqueous systems and at fluid interfaces, using particle
+          characterization, AFM and neutron/X-ray scattering to understand how
+          particle composition and mechanics govern interfacial organization,
+          confined structures and macroscopic material response.
+        </p>
+      </div>
+    </section>
+
+    <section id="current" class="current split-section">
+      <div>
+        <p class="kicker">Current research</p>
+      </div>
+
+      <div class="current-box">
+        <h3>Soft colloidal particles at fluid interfaces</h3>
+        <p>
+          My PhD research investigates how microgel composition, charge and
+          deformability govern their organization at air–water interfaces, and how
+          this interfacial structure translates into thin-film architecture and
+          macroscopic stability.
+        </p>
+        <p class="meta">
+          Polymer colloids · Soft interfaces · Structure–property relationships · AFM · SANS/SAXS
+        </p>
+      </div>
+    </section>
+
+    <section id="research" class="band">
+      <div class="section-head">
+        <p class="kicker">Research</p>
+        <h2>Selected research projects.</h2>
+        <p class="small-text">Further details are available in my CV.</p>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <div class="research-icon">01</div>
+          <span>PhD Research</span>
+          <h3>Microgel-stabilized aqueous foams</h3>
+          <p>TU Darmstadt · Institut Laue-Langevin · 2023 — Present</p>
+        </article>
+
+        <article class="research-card">
+          <div class="research-icon">02</div>
+          <span>Master’s Research</span>
+          <h3>Graphene and hBN growth on copper surfaces</h3>
+          <p>ESRF · CEA Grenoble · 2023</p>
+        </article>
+
+        <article class="research-card">
+          <div class="research-icon">03</div>
+          <span>Research Internship</span>
+          <h3>Nanowire device fabrication and encapsulation</h3>
+          <p>CNRS Institut Néel · Grenoble · 2022</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-head">
+        <p class="kicker">Publications</p>
+        <h2>Selected publications.</h2>
+      </div>
+
+      <div class="publication-list">
+        <article class="publication">
+          <div>
+            <h3>Multiscale Structure of Microgel-Containing Foams: From Particle Mechanics to Confined Films</h3>
+            <p>Manmeet Kaur Sodhi et al. · Manuscript in preparation</p>
+          </div>
+          <div class="year">In prep.</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>Hexagonal Boron Nitride on Liquid and Single-Crystal Copper Surfaces</h3>
+            <p>Advanced Science</p>
+          </div>
+          <div class="year">2026</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>Comparing Simulated and Synthesized Polymer Brush Profiles</h3>
+            <p>Journal of Chemical Physics · 163, 174906</p>
+          </div>
+          <div class="year">2025</div>
+        </article>
+
+        <article class="publication">
+          <div>
+            <h3>AlN Nanowire-Based Vertically Integrated Piezoelectric Nanogenerators</h3>
+            <p>ACS Applied Nano Materials · 7</p>
+          </div>
+          <div class="year">2024</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <p class="kicker">Experience</p>
+        <h2>Research experience.</h2>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience">
+          <div class="date">2023 — Present</div>
+          <div>
+            <h3>Doctoral Researcher · TU Darmstadt & Institut Laue-Langevin</h3>
+            <p>Soft matter, polymer colloids, microgel-stabilized foams and scattering-based characterization.</p>
+          </div>
+        </div>
+
+        <div class="experience">
+          <div class="date">2023</div>
+          <div>
+            <h3>Master’s Research · ESRF & CEA Grenoble</h3>
+            <p>Graphene and hBN growth on copper surfaces using synchrotron-based characterization.</p>
+          </div>
+        </div>
+
+        <div class="experience">
+          <div class="date">2022</div>
+          <div>
+            <h3>Research Internship · CNRS Institut Néel</h3>
+            <p>Nanowire device fabrication, encapsulation and microscopy-based characterization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv">
+      <div class="final-grid">
+        <div class="cv-card">
+          <div>
+            <h3>CV</h3>
+            <p>
+              A full overview of my research experience, methods, publications and technical skills.
+            </p>
+
+            <div class="buttons">
+              <a class="button" href="Manmeet_Kaur_Sodhi_CV.pdf">Download CV</a>
+            </div>
+          </div>
+
+          <div class="cv-profile-block">
+            <p class="cv-profile-title">Profiles</p>
+
+            <div class="profile-links">
+              <a href="https://www.linkedin.com/in/manmeet-kaur-sodhi-a94039223" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ask-card" id="ask">
+          <h3>Ask me a question</h3>
+
+          <p>
+            Have a question about my research, methods or publications?
+            You can send me a short message here.
+          </p>
+
+          <form class="question-form" action="https://formspree.io/f/xljrjorl" method="POST">
+            <input type="hidden" name="_subject" value="New question from sodhimanmeet.com">
+
+            <div class="form-row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your name" required>
+              </label>
+
+              <label>
+                Email
+                <input type="email" name="email" placeholder="Your email" required>
+              </label>
+            </div>
+
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </label>
+
+            <button type="submit">Send message</button>
+          </form>
+
+          <p class="form-note">
+            Or email me directly at
+            <a href="mailto:21.manmeet@gmail.com">21.manmeet@gmail.com</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-name">Manmeet Kaur Sodhi</span> · © 2026
+  </footer>
+</body>
+</html>
